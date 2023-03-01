@@ -18,7 +18,7 @@ button {
     border: none;
     height: 45px;
     font-weight: 200;
-    width: 235px;
+    width: 50%;
     font-size: 17px;
     border-radius: 3px;
     margin-top: 1.2rem;
@@ -248,12 +248,11 @@ justify-content: space-between;
 
 #section-dos {
     background-color: #fafafa;
-    height: 83vh;
+    height: 84vh;
     width: 100%;
     flex-direction: column;
     gap: 1rem;
     width: 100%;
-    height: max-content;
 }
 
 #section-dos h2 {
@@ -402,16 +401,16 @@ margin-bottom: 2rem ;
 }
 /* SECTION FOUR */
 #section-four{
-    height: 66vh;
+    min-height: 66vh!important;
     width: 100%;
-    background-color: var(--letters-white);
+    background-color: var(--background);
     padding: 0!important;
   
 }
 
 .section-four__right, .section-four__left {
     width: 50%;
-    height: 100%;
+    height: 100%!important;
 }
 
 .section-four__left h2 {
@@ -442,6 +441,8 @@ input {
 }
 
 .section-four__left{
+    background-color: var(--letters-white);
+
     display: flex;
     flex-direction: column;
     padding: 3rem 3rem 3rem 150px;
@@ -450,6 +451,7 @@ input {
 
 .section-four__right{
     background-color: var(--background);
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
