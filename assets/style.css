@@ -466,9 +466,8 @@ input {
 
 footer {
     height: 17vh;
-    background-color: var(--background);
-    border-top: 1px solid var(--letters-white
-    );
+    background-color: var(--letters-white);
+    border-top: 1px solid var(--background);
 }
 
 
