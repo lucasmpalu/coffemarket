@@ -1,0 +1,77 @@
+.hero-left span {
+    border-right: 2px solid var(--letters-white);
+    font-weight: 700;
+    padding-right: 6px;
+    animation: typing 3s steps(13),
+    blink .5s infinite step-end alternate;
+    overflow: hidden;
+    
+}
+
+
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+
+}
+
+@keyframes blink {
+    50%{
+        border-color: transparent;
+        color: var(--letters-orange);
+        border-right: 2px solid var(--letters-orange);
+
+    }
+}
+
+.hero-right img {
+    animation: imageZoom 2s linear;
+}
+
+@keyframes imageZoom {
+    0%{
+        transform: scale(0.3);
+    }
+    /* 100%{
+        transform: scale(1);
+    } */
+    
+}
+
+/* .hero-left {
+    animation: fadetittle 2s ease-in-out;
+}
+
+@keyframes fadetittle {
+
+    from {
+        transform: translate(-200%);
+    }
+
+    to {
+        transform: translate(0);
+    }
+
+} */
+    
+button:hover {
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--letters-white);
+    transition: all;
+    border: 1px solid var(--letters-white);
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+}
+
+.label-cart:hover {
+    background-color: var(--letters-orange);
+    cursor: pointer;
+    border: 1px solid transparent;
+
+}
