@@ -431,6 +431,7 @@ input {
     width: 100%;
     border: none;
     border-bottom: 2px solid var(--background);
+    background-color: transparent;
 }
 
 .textarea {
@@ -438,6 +439,8 @@ input {
     border: none;
     border-bottom: 2px solid var(--background);
     font-family: 'Outfit', sans-serif!important;
+    background-color: transparent;
+
 }
 
 .section-four__left{
@@ -467,7 +470,7 @@ input {
 /* FOOTER */
 
 footer {
-    height: 17vh;
+    height: 11vh;
     background-color: var(--letters-white);
     border-top: 1px solid var(--background);
 }
