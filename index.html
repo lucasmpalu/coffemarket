@@ -15,14 +15,11 @@
 <body>
     
     <header id="header">
-        <div class="logo-header">
-            <img src="assets/header/logo.png" alt="Logo de la empresa" class="logo-header">
-        </div>
 
         <nav class="nav-bar">
             <ul class="nav-bar__ul">
                 <li>
-                    <a href="">
+                    <a href="index.html">
                         Home
                     </a>
                 </li>
@@ -33,14 +30,10 @@
                     </a>
                 </li>
 
-                <li class="collection-li">
-                    <a href="productos.html">Productos</a>
-                    <ul class="collection-ul">
-                        <li><a>Cafes</a></li>
-                        <li><a>Cafetera</a></li>
-                        <li><a>Tazas</a></li>
-                        <li><a>Combos</a></li>
-                    </ul>
+                <li>
+                    <a href="productos.html">
+                        Productos
+                    </a>
                 </li>
                 <li>
                     <a href="">
@@ -48,16 +41,25 @@
                     </a>
                 </li>
             </ul>
-
-            <div class="container-labels">
-                <div class="label-menu">
-                    <img src="assets/header/menu.png" alt="Logo del menú">
-                </div>
-                <div class="label-cart">
-                    <img src="assets/header/cart.png" alt="">
-                </div>
+            <div class="label-menu">
+                <img src="./assets/header/menu.png" alt="Logo del menú">
             </div>
         </nav>
+
+
+            <div class="logo-header">
+                <img src="./assets/header/logo.png" alt="Logo de la empresa" class="logo-header">
+            </div>
+    
+
+            <div class="container-labels">
+                <div class="label-login">
+                    <img src="assets/header/user.png" alt="">
+                </div>
+                <div class="label-cart">
+                    <img src="./assets/header/cart.png" alt="">
+                </div>
+            </div>
 
 
     </header>
@@ -122,11 +124,29 @@
                 </div>
                 
         </section>
-        <section></section>
+        <section id="section-four">
+            <div class="section-four__left">
+                <p>ROSARIO · COFFEE · MARKET</p>
+                <h2>C O N T A C T A N O S</h2>
+                <form class="form-contact" action="submit">
+                    <label for="name"></label>
+                    <input type="text" id="name" placeholder="NOMBRE COMPLETO">
+                    <label for="email"></label>
+                    <input type="email" id="name" placeholder="CORREO ELECTRÓNICO">
+                    <textarea class="textarea" name="" id="message" cols="40" rows="7" placeholder="ESCRIBE TU MENSAJE AQUÍ"></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+            <div class="section-four__right">
+
+                 <img src="assets/header/logo.png" alt="Logo de la empresa">
+            </div>
+        </section>
 
     </main>
     
     <footer>
+        
 
     </footer>
     <script src="./assets/carrousel.js"></script>

@@ -75,3 +75,16 @@ button:hover {
     border: 1px solid transparent;
 
 }
+
+.label-login:hover {
+    background-color: var(--letters-orange);
+    cursor: pointer;
+    border: 1px solid transparent;
+
+}
+
+.form-contact button:hover {
+    background-color: transparent;
+    border-color: var(--background);
+    color: var(--background);
+}
