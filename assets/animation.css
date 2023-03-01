@@ -74,6 +74,7 @@ button:hover {
     cursor: pointer;
     border: 1px solid transparent;
 
+
 }
 
 .label-login:hover {
@@ -81,10 +82,20 @@ button:hover {
     cursor: pointer;
     border: 1px solid transparent;
 
+
 }
 
 .form-contact button:hover {
     background-color: transparent;
     border-color: var(--background);
     color: var(--background);
+}
+
+.container-social img:hover {
+    background-color: var(--letters-orange);
+    cursor: pointer;
+    transform: scale(1.02);
+    box-shadow: 1px 1px 9px 9px  var(--letters-orange);
+    border: none;
+    transition: all .35s;
 }
