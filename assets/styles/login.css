@@ -9,7 +9,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('login/wooden-surface-looking-out-people-bar.jpg');
+    background-image: url('./img/login/wooden-surface-looking-out-people-bar.jpg');
     background-size: cover;
     background-position: bottom;
 }

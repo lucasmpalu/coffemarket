@@ -215,7 +215,7 @@ a {
 
 #hero {
 padding: 100px 150px;
-background-image: url('hero/background.jpg');
+background-image: url('img/hero/background.jpg');
 background-size: cover;
 background-position: center;
 background-attachment:fixed;
@@ -381,7 +381,7 @@ box-shadow:  0 10px 10px -5px;;
 #section-three {
     color: var(--letters-white);
     min-height: 80vh;
-    background-image: url('section-three/background.jpg');
+    background-image: url('img/section-three/background.jpg');
     background-position: center;
     display: flex;
     justify-content: flex-end;
