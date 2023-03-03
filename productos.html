@@ -33,7 +33,7 @@
                 <a href="login.html">
                     <div class="label-login">
                         <img src="./assets/styles/img/header/user.png" alt="Usuario">
-                        <p style="font-size: 12px; position: relative; bottom: 5px;;">Login</p>
+                        <p class="login-text">Login</p>
                     </div>
                 </a>
                 <div class="label-cart">
@@ -80,33 +80,70 @@
 
     </header>
     <section class="section-uno__products">
-        <aside>
-            <div>
-                <h3>Productos</h3>
+        <aside class="aside-products">
+            <h3>Productos</h3>
+
+            <div class="category-aside">
+                <p class="aside-tittle__category">Tipos de café</p>
+                <img class="right" src="assets/styles/img/products/icons/right.png" alt="">
             </div>
-            <p>Tipos de café</p>
-            <ul>
-                <li><a href="">Café en capsulas</a></li>
-                <li><a href="">Café soluble</a></li>
-                <li><a href="">Café molido</a></li>
-                <li><a href="">Café en granos</a></li>
+            <ul class="list-aside">
+                <li>Café en capsulas</li>
+                <li>Café soluble</li>
+                <li data-subcategory="Molido" class="li-subcategory">Café molido</li>
+                <li>Café en granos</li>
+                <li>Todas</li>
             </ul>
-            <p>Maquinas de café</p>
-            <ul>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
+
+            <div class="category-aside">
+                <p class="aside-tittle__category">Maquinas de café</p>
+                <img class="right" src="assets/styles/img/products/icons/right.png" alt="">
+            </div>
+            <ul class="list-aside">
+                <li><a href="" >Cafetera Espresso</a></li>
+                <li><a href="">Cafetera de capsulas</a></li>
+                <li><a href="">Cafetera de goteos</a></li>
+                <li><a href="">Todas</a></li>
             </ul>
-            <p>Cafeteras manuales</p>
-            <ul>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
+
+            <div class="category-aside">
+                <p class="aside-tittle__category">Cafeteras manuales</p>
+                <img class="right" src="assets/styles/img/products/icons/right.png" alt="">
+            </div>
+            <ul class="list-aside">
+                <li><a href="" >Cafetera italiana</a></li>
+                <li><a href="">Cafetera francesa</a></li>
+                <li><a href="">Todas</a></li>
             </ul>
+
+            <div class="category-aside">
+                <p class="aside-tittle__category">Tazas</p>
+                <img class="right" src="assets/styles/img/products/icons/right.png" alt="">
+            </div>
+            <ul class="list-aside">
+                <li><a href="">Espresso</a></li>
+                <li><a href="">Café largo</a></li>
+                <li><a href="">Latte</a></li>
+                <li><a href="">Capuccino</a></li>
+                <li><a href="">Todas</a></li>
+            </ul>
+
+            <div class="category-aside">
+                <p class="aside-tittle__category">Combos</p>
+            </div>
+
+
+            <div class="category-aside">
+                <p class="aside-tittle__category">Todos</p>
+            </div>
+
+
         </aside>
+        <div class="principal-container">
+
+        </div>
     </section>
+    <script src="assets/JS/products.js"></script>
 </main>
     
 </body>
