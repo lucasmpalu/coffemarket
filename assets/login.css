@@ -1,0 +1,117 @@
+body {
+    position: relative;
+}
+
+section {
+    background-color: var(--letters-white);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('login/wooden-surface-looking-out-people-bar.jpg');
+    background-size: cover;
+    background-position: bottom;
+}
+
+
+header {
+    position: absolute;
+    top: 100;
+    background-color: transparent!important;
+    height: 5vh;
+    border: none;
+    display: flex;
+    padding: 2.5rem;
+    justify-content: flex-start;
+
+}
+
+.back-home {
+    color: var(--letters-white);
+
+}
+
+header img {
+    height: 24px;
+}
+
+.container-login {
+    width: 35%;
+    height: 80%;
+    border-radius: 5px;
+    background-color: #fafafa8a;
+    box-shadow:  0 10px 10px -4px;
+    padding: 0!important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
+
+.form-top {
+    /* background-color: rgba(13, 13, 13, 0.592); */
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-top p {
+    font-size: 1.57rem;
+    color: var(--letters-white);
+    background-color: rgba(13, 13, 13, 0.555);
+    font-weight: 100;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.form-contact {
+    height: 85%;
+    width:100%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.form-contact button {
+    width: 100%;
+}
+
+.form-contact a {
+    color: var(--background)!important;
+    font-weight: 300;
+}
+
+.forgot-password {
+
+    position: relative;
+    right: -90px;
+
+}
+
+.register {
+    font-weight: 500!important;
+}
+
+.form-contact p {
+    font-weight: 200;
+}
+
+
+.form-contact h3 {
+    /* color: var(--letters-orange); */
+    font-size: 3rem;
+    font-weight: 200;
+
+}
+

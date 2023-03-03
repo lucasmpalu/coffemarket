@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Productos - Rosario Coffe Market</title>
+        <title>Login - Rosario Coffe Market</title>
         <link rel="stylesheet" href="./assets/style.css">
         <link rel="stylesheet" href="./assets/animation.css">
         <link rel="stylesheet" href="./assets/login.css">
@@ -14,17 +14,19 @@
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     </head>
 <body>
-    <header id="header">
-
+   <header id="header">
+    <img src="" alt="">
         <nav class="nav-bar">
             <ul class="nav-bar__ul">
+                <a href="index.html"><img href="index.html" class="back-login" src="assets/login/back.png" alt=""></a>
                 <li>
-                    <a href="index.html">
-                        Home
+                    <a href="index.html" class="back-home">
+                        Volver al Home
                     </a>
                 </li>
-                
-                <li>
+
+            </ul>
+                <!-- <li>
                     <a href="#section-three">
                         Nosotros
                     </a>
@@ -43,10 +45,11 @@
             <div class="label-menu">
                 <img src="./assets/header/menu.png" alt="Logo del menú">
             </div>
+        </nav> -->
         </nav>
 
 
-            <div class="logo-header">
+            <!-- <div class="logo-header">
                 <img src="./assets/header/logo.png" alt="Logo de la empresa" class="logo-header">
             </div>
     
@@ -58,12 +61,34 @@
                     <img src="./assets/header/cart.png" alt="">
                 </div>
             </div>
+             -->
 
 
-    </header>
+    </header> 
 <main>
-
     <section>
+        <div class="container-login">
+            <div class="form-top">
+                <!-- <img src="assets/header/logo.png" alt="Logo de la empresa"> -->
+                <p>ROSARIO · COFFEE · MARKET</p>
+            </div>
+                <!-- ESTE FORM ESTÁ RECICLADO CON PROPIEDADES DEL INDEX -->
+            <form class="form-contact" action="submit">
+                    <h3>Sign In</h3>
+                    <label for="user"></label>
+                    <input type="text" id="user" placeholder="USUARIO">
+                    <label for="password"></label>
+                    <input type="password" id="password" placeholder="PASSWORD">
+                    <a href="" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                <button type="submit">Entrar</button>
+                <p>No tienes cuenta aún?</p>
+                <a class="register" href="">Registrate acá</a>
+
+            </form>
+
+
+
+    </div>
 
     </section>
 </main>
