@@ -112,3 +112,7 @@ button:hover {
     transition: all .25s;
 
 }
+
+aside li:hover {
+    cursor: pointer;
+}

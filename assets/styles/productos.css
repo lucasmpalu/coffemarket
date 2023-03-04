@@ -9,6 +9,20 @@
 
 }
 
+.main-products {
+    width: 100%;
+    height: 100%;
+    padding: 0 2rem;
+}
+
+.main-products h1 {
+  font-size: 3rem;
+  font-weight: 500;
+ 
+}
+
+
+
 aside h3 {
     color: var(--background);
     padding: 1rem 1rem;
@@ -22,9 +36,9 @@ aside h3 {
 
 
 .aside-products {
-    width: 330px;
-    height: 100%;
-    color: rgb(17, 5, 5);
+    width: 25%;
+    height: 100%!important;
+    color: var(--background);
     background-color: rgb(250, 250, 250);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.125);
     border-radius: 5px;
@@ -51,6 +65,10 @@ ASIDE-TITTLE__CATEGORY - RIGHT
 
 }
 
+.li-subcategory {
+    margin-bottom: 0.2rem;
+}
+
 .category-aside {
     display: flex;
     justify-content: flex-start;
@@ -74,22 +92,64 @@ ASIDE-TITTLE__CATEGORY - RIGHT
     font-weight: 200;
     margin-left: 2rem;
     transition: all 10s!important;
-    color: var(--letters-orange)!important;
 
 }
-
-
 
 .toggleIcon {
    transform: rotate(90deg) scale(0.6)!important;
    transition: all .25s;
 }
 
-.principal-container {
-    height: 100%;
-    width: 70%!important;
+
+.container-buttons__pag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
 }
 
-.principal-container > * {
-    color: var(--background);
+.prevBtn {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px ;
+    margin: 0;
+    padding: 0;
+    background-color: var(--letters-orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--letters-white);
+}
+
+.current-page {
+    width: 25px;
+    height: 25px;
+    /* border: 1px solid var(--background); */
+    border-radius: 7px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.nextBtn {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px ;
+    background-color: var(--letters-orange);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--letters-white);;
+}
+
+.nextBtn:hover, .prevBtn:hover {
+transform: scale(0.94);
+cursor: pointer;
+}
+
+.disabled {
+    background-color: gray;
 }

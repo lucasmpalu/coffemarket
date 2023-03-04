@@ -58,6 +58,7 @@ header img {
     align-items: center;
     justify-content: center;
 }
+
 .form-top p {
     font-size: 1.57rem;
     color: var(--letters-white);
@@ -108,10 +109,10 @@ header img {
 }
 
 
-.form-contact h3 {
+.container-login h3 {
     /* color: var(--letters-orange); */
-    font-size: 3rem;
-    font-weight: 200;
+    font-size: 2.5rem;
+    font-weight: 100;
 
 }
 

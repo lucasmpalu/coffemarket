@@ -8,14 +8,20 @@
         <link rel="stylesheet" href="./assets/styles/style.css">
         <link rel="stylesheet" href="./assets/styles/animation.css">
         <link rel="stylesheet" href="./assets/styles/productos.css">
+        <link rel="stylesheet" href="./assets/styles/cards.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     </head>
 <body>
+       <!-- BUTTON STICKY -->
+       <a href="https://wa.me/13413127575?text=Hola!%20Me%20interesar%C3%ADa%20saber%20sobre%20un%20producto">
+            <div class="whatsapp-sticky">
+                <img class="no-hover"src="assets/styles/img/hero/whatsapp.png" alt="">
+            </div>
+        </a>
     <header id="header">
-
         <div class="header-top">
             <div class="logo-header">
                 <img src="./assets/styles/img/header/logo.png" alt="Logo de la empresa" class="logo-header">
@@ -88,11 +94,11 @@
                 <img class="right" src="assets/styles/img/products/icons/right.png" alt="">
             </div>
             <ul class="list-aside">
-                <li>Café en capsulas</li>
-                <li>Café soluble</li>
+                <li data-subcategory="Capsulas" class="li-subcategory">Café en capsulas</li>
+                <li data-subcategory="Soluble" class="li-subcategory">Café soluble</li>
                 <li data-subcategory="Molido" class="li-subcategory">Café molido</li>
-                <li>Café en granos</li>
-                <li>Todas</li>
+                <li data-subcategory="Granos" class="li-subcategory">Café en granos</li>
+                <li data-category="Cafe" class="li-subcategory">Todas</li>
             </ul>
 
             <div class="category-aside">
@@ -100,10 +106,10 @@
                 <img class="right" src="assets/styles/img/products/icons/right.png" alt="">
             </div>
             <ul class="list-aside">
-                <li><a href="" >Cafetera Espresso</a></li>
-                <li><a href="">Cafetera de capsulas</a></li>
-                <li><a href="">Cafetera de goteos</a></li>
-                <li><a href="">Todas</a></li>
+                <li data-subcategory="Espresso" class="li-subcategory">Cafetera Espresso</li>
+                <li data-subcategory="Cafetera-capsula" class="li-subcategory">Cafetera de capsulas</li>
+                <li data-subcategory="Goteo" class="li-subcategory">Cafetera de goteos</li>
+                <li data-category="Maquina" class="li-subcategory">Todas</li>
             </ul>
 
             <div class="category-aside">
@@ -111,9 +117,9 @@
                 <img class="right" src="assets/styles/img/products/icons/right.png" alt="">
             </div>
             <ul class="list-aside">
-                <li><a href="" >Cafetera italiana</a></li>
-                <li><a href="">Cafetera francesa</a></li>
-                <li><a href="">Todas</a></li>
+                <li data-subcategory="Italiana" class="li-subcategory">Cafetera italiana</li>
+                <li data-subcategory="Francesa" class="li-subcategory">Cafetera francesa</li>
+                <li data-category="Manual" class="li-subcategory">Todas</li>
             </ul>
 
             <div class="category-aside">
@@ -121,26 +127,38 @@
                 <img class="right" src="assets/styles/img/products/icons/right.png" alt="">
             </div>
             <ul class="list-aside">
-                <li><a href="">Espresso</a></li>
-                <li><a href="">Café largo</a></li>
-                <li><a href="">Latte</a></li>
-                <li><a href="">Capuccino</a></li>
-                <li><a href="">Todas</a></li>
+                <li data-subcategory="Espresso Taza" class="li-subcategory">Espresso</li>
+                <li data-subcategory="Largo" class="li-subcategory">Café largo</li>
+                <li data-subcategory="Latte" class="li-subcategory">Latte</li>
+                <li data-subcategory="Capuccino" class="li-subcategory">Capuccino</li>
+                <li data-category="Taza" class="li-subcategory">Todas</li>
             </ul>
 
             <div class="category-aside">
-                <p class="aside-tittle__category">Combos</p>
+                <p class="aside-tittle__category" data-category="Combos">Combos</p>
+                <!-- LA IMG VACIA ES PARA QUE JS NO ME ROTE "EL ULTIMO HIJO" DEL DIV AL CUAL LE AGREGO UNA CLASE QUE HACE QUE SE ROTE, ASÍ QUE LO QUE ROTARÍA ES UNA IMAGEN VACIA-->
+                <img src="" alt="">
             </div>
+     
 
 
             <div class="category-aside">
-                <p class="aside-tittle__category">Todos</p>
+                <p class="aside-tittle__category" data-category="Todos">Todos</p>
+                <!-- LA IMG VACIA ES PARA QUE JS NO ME ROTE "EL ULTIMO HIJO" DEL DIV AL CUAL LE AGREGO UNA CLASE QUE HACE QUE SE ROTE, ASÍ QUE LO QUE ROTARÍA ES UNA IMAGEN VACIA-->
+                <img src="" alt="">
             </div>
 
-
         </aside>
-        <div class="principal-container">
+        <div class="main-products">
+            <h1>Productos encontrados👇</h1>
+            <div class="cards-container">
 
+            </div>
+            <div class="container-buttons__pag">
+                <div class="prevBtn">-</div>
+                <div class="current-page">0</div>
+                <div class="nextBtn">+</div>
+            </div>
         </div>
     </section>
     <script src="assets/JS/products.js"></script>
