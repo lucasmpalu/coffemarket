@@ -119,8 +119,15 @@ header {
     right: -2px;
 }
 
+.header-container__logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
 .logo-header {
-    height: 103%;
+    height: 85%;
+    /* width: 190px; */
 }
 
 .label-cart {
@@ -454,7 +461,7 @@ input {
 }
 
 .section-four__right img {
-    height: 80%;
+    width: 60%;
 }
 
 
