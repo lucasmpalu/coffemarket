@@ -729,7 +729,7 @@ const prevPage = (e) => {
     pagination.current -= 1
     pagination.prev = pagination.prev == 0 ? null : pagination.prev - 1
     pagination.next -= 1
-    
+    isNull()
 }
 
 
@@ -782,7 +782,6 @@ const renderAll = (e) => {
         currentCategory = selectedCategory
         renderCategory(selectedCategory)
     }
-
 }
 
 const isNull = () => {

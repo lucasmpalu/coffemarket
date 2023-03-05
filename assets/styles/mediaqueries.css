@@ -1,0 +1,37 @@
+@media screen and (min-width: 1200px){
+    html {
+        font-size: 18px;
+    }
+    .hero-right img {
+        width: 550px;
+    }
+    
+}
+
+
+@media screen and (max-width: 1024px){
+
+    html {
+        font-size: 16px;
+    }
+
+
+
+    .hero-right img{
+        width: 400px!important;
+        z-index: 1;
+        position: relative;
+    }
+
+
+
+    .hero-left button {
+        z-index:2;
+        position: relative;
+        width: 60%;
+    }
+
+
+
+}
+    
