@@ -20,7 +20,8 @@ html {
     
 }
 
-body {
+
+main {
     position: relative;
 }
 
@@ -60,6 +61,7 @@ p {
 main {
     width: 100%;
 }
+
 section {
     display: flex;
     align-items: center;
@@ -79,7 +81,6 @@ section {
 /* HEADER */
 
 header {
-    display: ;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -89,11 +90,10 @@ header {
     color: var(--letters-white);
     height: 20vh;
     width: 100%;
-    z-index: 3;
     border-bottom: 1px solid var(--background);
+    position: relative;
     
 }
-
 
 .header-top {
     display: flex;
@@ -115,8 +115,9 @@ margin: 0;
     /* align-items:center; */
     height: 7vh!important;
     width: 100%!important;
-    border-top: 1px solid var(--letters-white);
     background-color: var(--letters-white);
+    position: relative;
+
 }
 
 .header-bottom .container {
@@ -156,7 +157,6 @@ margin: 0;
 }
 
 .search-input {
-    /* border: 1px solid white; */
     border-radius: 30px;
     height: 2.1rem;
     width: 19rem!important;
@@ -186,9 +186,6 @@ margin: 0;
     height: 80%;
 }
 
-.label-search {
-    
-}
 
 .container-labels {
     display: flex;
@@ -208,15 +205,13 @@ margin: 0;
     transform: scale(1.1);
 }
 
-/* .login-text {
-font-size: 0.7rem;
-position: relative;
-bottom: 5px;
-color: #fafafa;
-} */
 
 .label-menu {
 display: none;
+}
+
+.burger-menu{
+    display: none;
 }
 
 .label-search {

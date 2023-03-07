@@ -23,24 +23,24 @@
             </div>
         </a>
    
-        <header id="header">
-        
+        <header id="header">  
             <div class="header-top">
                 <div class="container">
                     <div class="header-container__logo">
                         <img src="./assets/styles/img/header/logo3.png" alt="Logo de la empresa" class="logo-header">
                     </div>
-            
+                    
+                    <div class="search-input">
+                        <label for="search-product"></label>
+                        <input type="text" id="search-product" placeholder="Busque aquí un producto">
+                        <div>
+                            <img src="./assets/styles/img/header/search.png" alt="Lupa">
+                        </div>
+                    </div>
                     
                     <div class="container-labels">
 
-                        <div class="search-input">
-                            <label for="search-product"></label>
-                            <input type="text" id="search-product" placeholder="Busque aquí un producto">
-                            <div>
-                                <img src="./assets/styles/img/header/search.png" alt="Lupa">
-                            </div>
-                        </div>
+ 
                     
                         <div class="label-search">
                             <img src="./assets/styles/img/header/search.png" alt="Lupa">
@@ -63,7 +63,6 @@
                     </div>
                 </div>
             </div>
-    
             <div class="header-bottom">
                 <div class="container">
                 <nav class="nav-bar">
@@ -72,14 +71,18 @@
                             <a href="index.html">
                                 Home
                             </a>
-                        </li>
                         
                         <li>
                             <a href="#section-three">
                                 Nosotros
                             </a>
                         </li>
-
+    
+                        <li>
+                            <a href="productos.html">
+                                Productos
+                            </a>
+                        </li>
                         <li>
                             <a href="#section-four">
                                 Contacto
@@ -91,6 +94,32 @@
                     </div>
                 </nav>
             </div>
+        </div>
+        <div class="burger-menu">
+            <ul class="burger-list">
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                
+                <li>
+                    <a href="#section-three">
+                        Nosotros
+                    </a>
+                </li>
+
+                <li>
+                    <a href="productos.html">
+                        Productos
+                    </a>
+                </li>
+                <li>
+                    <a href="#section-four">
+                        Contacto
+                    </a>
+                </li>
+            </ul>
+
         </div>
     </header>
     
@@ -177,6 +206,7 @@
         </div>
     </section>
     <script src="assets/JS/products.js"></script>
+    <script src="assets/JS/cart.js"></script>
 </main>
     
 </body>

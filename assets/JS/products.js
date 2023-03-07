@@ -4,15 +4,17 @@ const $arrowRightAside = document.querySelector('.right')
 const $cardsContainer = document.querySelector('.cards-container')
 const $itemSubcategory = document.querySelector('.li-subcategory')
 const $listAside = document.querySelectorAll('list-aside')
-const $contenedorCards = document.querySelector('.contenedor-cards')
+const $containerButtonPages = document.querySelector('.container-buttons__pag')
 const $nextBtn = document.querySelector('.nextBtn')
 const $prevBtn = document.querySelector('.prevBtn')
 const $currentPage = document.querySelector('.current-page')
 const $seeProducts = document.querySelector('.div-tittle-aside')
 const $containerCategorys = document.querySelector('.container-categorys')
-
-var mql = window.matchMedia("screen and (max-device-width: 480px) and (orientation: landscape)");
-
+const $mainProducts = document.querySelector('.main-products')
+const $labelMenu = document.querySelector('.label-menu')
+const $burgerMenu = document.querySelector('.burger-menu')
+const $tittleDisabled = $mainProducts.firstElementChild
+var mediaqueryList = window.matchMedia("(max-width: 600px)");
 
 let currentCategory = null
 
@@ -508,26 +510,38 @@ const dividedArray = (arr, pages) => {
 
 }
 
+const clearProducts = () => {
+    $cardsContainer.innerHTML = ''
+}
+
 const renderSubcategory = (subcategory) => { 
+       $tittleDisabled.classList.add('displayBlock')
+       $containerButtonPages.style.visibility = 'visible'
+       isDisabled()
+
 
         let renderArray = arrayAllProducts.filter(item => {
         return item.subcategory == subcategory})
 
         let newArray = dividedArray(renderArray, 6)
 
+          
+
         pagination.total = newArray.length
         currentCategory = newArray
 
+
         $cardsContainer.innerHTML += newArray[0].map(product => { return renderProduct(product)}).join('')
-        
+        isDisabled()
+
         $currentPage.innerText = '1'
 
-
-
-    
 }
 
 const renderCategory = (category) => {
+    $tittleDisabled.classList.add('displayBlock')    
+    $containerButtonPages.style.visibility = 'visible'
+
 
     if(category == 'Todos') {
 
@@ -538,7 +552,9 @@ const renderCategory = (category) => {
         $cardsContainer.innerHTML += newArray[0].map(product => {
              return renderProduct(product)}).join('')
         $currentPage.innerText = '1'
-        isNull()
+        addDisplayBlock()
+        isDisabled()
+
 
          return    
     }
@@ -550,6 +566,11 @@ const renderCategory = (category) => {
         let newArray = dividedArray(renderArray, 6)
         pagination.total = newArray.length
         currentCategory = newArray
+
+        addDisplayBlock()
+        isDisabled()
+
+
     
         $cardsContainer.innerHTML += newArray[0].map(product => {
             return renderProduct(product)}).join('')
@@ -558,14 +579,10 @@ const renderCategory = (category) => {
     }
 }
 
-
-const clearProducts = () => {
-    $cardsContainer.innerHTML = ''
-}
-
 const renderGeneral = (e) => {
     let selectedSubcategory = e.target.dataset.subcategory
     let selectedCategory = e.target.dataset.category
+    isDisabled()
 
     if(selectedCategory != undefined){
 
@@ -699,13 +716,34 @@ const renderPagination = (currentCategory, index) => {
 
 }
 
+const addDisplayBlock = () => {
+
+    if(mediaqueryList.matches){
+        $mainProducts.classList.add('displayBlock')
+        $containerCategorys.classList.remove('displayBlock')
+        $containerCategorys.classList.add('displayNone')
+        return
+    }
+
+    $mainProducts.classList.add('displayBlock')
+
+}
+
+
+const seeCategorys = (e) => {
+    const $iconForRotate = $seeProducts.lastElementChild
+
+    $containerCategorys.classList.toggle('displayBlock')
+    $iconForRotate.classList.toggle('rotateIconRight')
+}
+
 const disabledButton = (btn) => {
     btn.classList.add('disable')
 }
 
 const nextPage = (e) => {
     e.stopImmediatePropagation()
-
+    isDisabled()
     if( pagination.next == pagination.total) { 
         return }
 
@@ -713,7 +751,7 @@ const nextPage = (e) => {
     pagination.prev = pagination.current
     pagination.current += 1
     pagination.next += 1
-    isNull()
+    isDisabled()
     $currentPage.innerText = pagination.next
 
     
@@ -722,7 +760,7 @@ const nextPage = (e) => {
 
 const prevPage = (e) => {
     e.stopImmediatePropagation()
-
+    
     if(pagination.prev == null){ return }
 
     console.log(pagination)
@@ -730,13 +768,12 @@ const prevPage = (e) => {
     $currentPage.innerText = pagination.current
 
     renderPagination(currentCategory, pagination.prev)
-    isNull()
+    isDisabled()
     pagination.current -= 1
     pagination.prev = pagination.prev == 0 ? null : pagination.prev - 1
     pagination.next -= 1
-    isNull()
+    isDisabled()
 }
-
 
 const visibilityNextElement = (e) => {
 
@@ -789,8 +826,9 @@ const renderAll = (e) => {
     }
 }
 
-const isNull = () => {
+const isDisabled = () => {
 
+    console.log(pagination)
     if(pagination.prev == null){
         $prevBtn.classList.add('disabled')
     } else {
@@ -806,28 +844,18 @@ const isNull = () => {
 }
 
 
-
-const  seeCategorys = (e) => {
-    const $iconForRotate = $seeProducts.lastElementChild
-
-    $containerCategorys.classList.toggle('productsBlock')
-    $iconForRotate.classList.toggle('rotateIconRight')
-
-}
-
-
-
-
 const init = () => {
-
-    isNull()
-
+    isDisabled()
     $asideProducts.addEventListener('click', visibilityNextElement)
     $asideProducts.addEventListener('click', renderGeneral)
     $asideProducts.addEventListener('click', renderAll)
     $prevBtn.addEventListener('click', prevPage)
     $nextBtn.addEventListener('click', nextPage)
     $seeProducts.addEventListener('click', seeCategorys)
+    $labelMenu.addEventListener('click',function() {
+        $burgerMenu.classList.toggle('menu-active')
+    })
+
 }
 
 init()

@@ -1,5 +1,5 @@
 .section-uno__products {
-    background-color: rgb(253, 253, 253);
+    background-color: rgb(255, 255, 255);
     width: 100%;
     min-height: 80vh;
     display: flex;
@@ -112,7 +112,7 @@ ASIDE-TITTLE__CATEGORY - RIGHT
     align-items: center;
     justify-content: center;
     gap: 0.3rem;
-    display: none;
+    visibility: hidden;
 }
 
 .div-tittle-aside {
@@ -185,4 +185,10 @@ cursor: pointer;
     background-color: rgb(253, 253, 253); */
 }
 
+.displayNone {
+    display: none!important;
+}
 
+.displayBlock {
+    display: block!important;
+}
