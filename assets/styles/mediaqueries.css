@@ -149,6 +149,59 @@
         display: none;
     }
 
+    .nav-bar__ul {
+        display: none;
+    }
+
+    .header-bottom .container {
+        justify-content: flex-start;
+    }
+
+    .menu-active {
+        position: absolute;
+        display: flex;
+        background-color: var(--letters-white);
+        padding: 22vh 20px;
+        z-index: 100;
+        top: -0px;
+        left: 0px!important;
+        right: 40%;
+        height: 100vh;
+        box-shadow: 0 10px 10px -5px;
+        animation: slide-right 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    @keyframes slide-right {
+
+        0%{
+            transform: translate(-1000px);
+            opacity: 0;
+        }
+
+        100%{
+            transform: translate(0);
+            opacity: 1;
+        }
+        
+    }
+
+    .burger-list {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .nav-bar {
+        border: 1px solid var(--background)!important;
+        border-radius: 5px;
+        z-index: 200;
+    }
+
+    .label-menu {
+        display: flex;
+
+    }
+
     .tittle-hero {
 
         font-size: 2.1rem;
@@ -232,8 +285,6 @@
         display: none;
     }
 
-    /* PRODUCTS.HTML */
-
 
 
 }
@@ -268,54 +319,7 @@
         width: 80%;
     }
 
-    .nav-bar__ul {
-        display: none;
-    }
-
-    .menu-active {
-        position: absolute;
-        display: flex;
-        background-color: var(--letters-white);
-        padding: 22vh 20px;
-        z-index: 100;
-        top: -0px;
-        left: 0px!important;
-        right: 40%;
-        height: 100vh;
-        box-shadow: 0 10px 10px -5px;
-        animation: slide-right 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-    }
-
-    @keyframes slide-right {
-
-        0%{
-            transform: translate(-1000px);
-            opacity: 0;
-        }
-
-        100%{
-            transform: translate(0);
-            opacity: 1;
-        }
-        
-    }
-
-    .burger-list {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .nav-bar {
-        border: 1px solid var(--background)!important;
-        border-radius: 5px;
-        z-index: 200;
-    }
-
-    .label-menu {
-        display: flex;
-
-    }
+  
 
     .section-three__right {
         width: 80%;

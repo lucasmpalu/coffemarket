@@ -2,9 +2,10 @@
     border-right: 2px solid var(--letters-white);
     font-weight: 700;
     padding-right: 6px;
-    animation: typing 3s steps(13),
-    blink .5s infinite step-end alternate;
+    animation: typing 3s steps(14),
+    blink .7s infinite step-end alternate;
     overflow: hidden;
+    width: 100%;
     
 }
 
@@ -31,9 +32,7 @@
     from {
         width: 0;
     }
-    to {
-        width: 100%;
-    }
+
 
 }
 
@@ -41,7 +40,7 @@
     50% {
         border-color: transparent;
         color: var(--letters-orange);
-        border-right: 2px solid var(--letters-orange);
+        /* border-right: 2px solid var(--letters-orange); */
     }
 }
 
