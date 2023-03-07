@@ -214,6 +214,23 @@ display: none;
     display: none;
 }
 
+.close-menu {
+    height: 32px;
+    width: 32px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+}
+
+.burger-list {
+    position: relative;
+}
+
+.burger-list li {
+    position: relative;
+}
+
 .label-search {
     position: relative;
     bottom: -0.26rem;

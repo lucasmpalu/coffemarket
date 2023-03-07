@@ -23,18 +23,7 @@
     transition: .5s;
 }
 
-.burger-list li:after {
-    content: '';
-    position: absolute;
-    height: 3px;
-    background-color: var(--letters-orange);
-    box-shadow: 0px 0px 2px black;
-    bottom: -5px;
-    right: 0%;
-    width: 0%;
-    transition: .5s;
 
-}
 
 .nav-bar__ul li:hover::after {
     content: '';
@@ -43,12 +32,7 @@
 
 }
 
-.burger-list li:hover::after {
-    content: '';
-    width: 100%;
-    left: 0%;
 
-}
 
 
 @keyframes typing {
