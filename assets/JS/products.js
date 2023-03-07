@@ -11,8 +11,6 @@ const $currentPage = document.querySelector('.current-page')
 const $seeProducts = document.querySelector('.div-tittle-aside')
 const $containerCategorys = document.querySelector('.container-categorys')
 const $mainProducts = document.querySelector('.main-products')
-const $labelMenu = document.querySelector('.label-menu')
-const $burgerMenu = document.querySelector('.burger-menu')
 const $tittleDisabled = $mainProducts.firstElementChild
 var mediaqueryList = window.matchMedia("(max-width: 600px)");
 
