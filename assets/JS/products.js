@@ -16,6 +16,7 @@ const $burgerMenu = document.querySelector('.burger-menu')
 const $tittleDisabled = $mainProducts.firstElementChild
 var mediaqueryList = window.matchMedia("(max-width: 600px)");
 
+
 let currentCategory = null
 
 
@@ -735,6 +736,7 @@ const seeCategorys = (e) => {
 
     $containerCategorys.classList.toggle('displayBlock')
     $iconForRotate.classList.toggle('rotateIconRight')
+    $icon
 }
 
 const disabledButton = (btn) => {
