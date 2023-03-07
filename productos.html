@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="./assets/styles/animation.css">
         <link rel="stylesheet" href="./assets/styles/productos.css">
         <link rel="stylesheet" href="./assets/styles/cards.css">
+        <link rel="stylesheet" href="./assets/styles/mediaqueries.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -23,38 +24,48 @@
         </a>
    
         <header id="header">
-
-            <div class="header-top">
-                <div class="header-container__logo">
-                    <img src="./assets/styles/img/header/logo3.png" alt="Logo de la empresa" class="logo-header">
-                </div>
         
-                
-                <div class="container-labels">
-                    <div class="search-input">
-                        <label for="search-product"></label>
-                        <input type="text" id="search-product" placeholder="Busque aquí un producto">
-                        <div>
+            <div class="header-top">
+                <div class="container">
+                    <div class="header-container__logo">
+                        <img src="./assets/styles/img/header/logo3.png" alt="Logo de la empresa" class="logo-header">
+                    </div>
+            
+                    
+                    <div class="container-labels">
+
+                        <div class="search-input">
+                            <label for="search-product"></label>
+                            <input type="text" id="search-product" placeholder="Busque aquí un producto">
+                            <div>
+                                <img src="./assets/styles/img/header/search.png" alt="Lupa">
+                            </div>
+                        </div>
+                    
+                        <div class="label-search">
                             <img src="./assets/styles/img/header/search.png" alt="Lupa">
                         </div>
-                    </div>
-                    <a href="login.html">
-                        <div class="label-login">
-                            <img src="./assets/styles/img/header/user.png" alt="Usuario">
-                            <p class="login-text">Login</p>
+                        
+                        <a href="login.html">
+                            <div class="label-login">
+                                <img src="./assets/styles/img/header/user.png" alt="Usuario">
+                                <!-- <p class="login-text">Login</p> -->
+                            </div>
+                        </a>
+
+                        <div class="label-cart">
+                            <div class="label-cart__numbers">
+                                0
+                            </div>
+                            <img src="./assets/styles/img/header/cart.png" alt="Carrito">
                         </div>
-                    </a>
-                    <div class="label-cart">
-                        <div class="label-cart__numbers">
-                            0
-                        </div>
-                        <img src="./assets/styles/img/header/cart.png" alt="Carrito">
+
                     </div>
-    
                 </div>
             </div>
     
             <div class="header-bottom">
+                <div class="container">
                 <nav class="nav-bar">
                     <ul class="nav-bar__ul">
                         <li>
@@ -68,98 +79,100 @@
                                 Nosotros
                             </a>
                         </li>
-    
-                        <li>
-                            <a href="productos.html">
-                                Productos
-                            </a>
-                        </li>
+
                         <li>
                             <a href="#section-four">
                                 Contacto
                             </a>
                         </li>
                     </ul>
-                    <!-- <div class="label-menu">
-                        <img src="./assets/header/menu.png" alt="Logo del menú">
-                    </div> -->
+                    <div class="label-menu">
+                        <img src="./assets/styles/img/header/menu.png" alt="Logo del menú">
+                    </div>
                 </nav>
             </div>
+        </div>
     </header>
     
     <section class="section-uno__products">
-        <aside class="aside-products">
-            <h3>Productos</h3>
+        <div class="container">
+            <aside class="aside-products">
+                <div class="div-tittle-aside">
+                    <h3>Productos</h3>
+                    <img src="assets/styles/img/products/icons/right.png" alt="">
+                </div>
+                <div class="container-categorys">
 
-            <div class="category-aside">
-                <p class="aside-tittle__category">Tipos de café</p>
-                <img class="right" src="assets/styles/img/products/icons/right.png" alt="">
-            </div>
-            <ul class="list-aside">
-                <li data-subcategory="Capsulas" class="li-subcategory">Café en capsulas</li>
-                <li data-subcategory="Soluble" class="li-subcategory">Café soluble</li>
-                <li data-subcategory="Molido" class="li-subcategory">Café molido</li>
-                <li data-subcategory="Granos" class="li-subcategory">Café en granos</li>
-                <li data-category="Cafe" class="li-subcategory">Todas</li>
-            </ul>
+                <div class="category-aside">
+                    <p class="aside-tittle__category">Tipos de café</p>
+                    <img class="right" src="assets/styles/img/products/icons/right.png" alt="">
+                </div>
+                <ul class="list-aside">
+                    <li data-subcategory="Capsulas" class="li-subcategory">Café en capsulas</li>
+                    <li data-subcategory="Soluble" class="li-subcategory">Café soluble</li>
+                    <li data-subcategory="Molido" class="li-subcategory">Café molido</li>
+                    <li data-subcategory="Granos" class="li-subcategory">Café en granos</li>
+                    <li data-category="Cafe" class="li-subcategory">Todas</li>
+                </ul>
 
-            <div class="category-aside">
-                <p class="aside-tittle__category">Maquinas de café</p>
-                <img class="right" src="assets/styles/img/products/icons/right.png" alt="">
-            </div>
-            <ul class="list-aside">
-                <li data-subcategory="Espresso" class="li-subcategory">Cafetera Espresso</li>
-                <li data-subcategory="Cafetera-capsula" class="li-subcategory">Cafetera de capsulas</li>
-                <li data-subcategory="Goteo" class="li-subcategory">Cafetera de goteos</li>
-                <li data-category="Maquina" class="li-subcategory">Todas</li>
-            </ul>
+                <div class="category-aside">
+                    <p class="aside-tittle__category">Maquinas de café</p>
+                    <img class="right" src="assets/styles/img/products/icons/right.png" alt="">
+                </div>
+                <ul class="list-aside">
+                    <li data-subcategory="Espresso" class="li-subcategory">Cafetera Espresso</li>
+                    <li data-subcategory="Cafetera-capsula" class="li-subcategory">Cafetera de capsulas</li>
+                    <li data-subcategory="Goteo" class="li-subcategory">Cafetera de goteos</li>
+                    <li data-category="Maquina" class="li-subcategory">Todas</li>
+                </ul>
 
-            <div class="category-aside">
-                <p class="aside-tittle__category">Cafeteras manuales</p>
-                <img class="right" src="assets/styles/img/products/icons/right.png" alt="">
-            </div>
-            <ul class="list-aside">
-                <li data-subcategory="Italiana" class="li-subcategory">Cafetera italiana</li>
-                <li data-subcategory="Francesa" class="li-subcategory">Cafetera francesa</li>
-                <li data-category="Manual" class="li-subcategory">Todas</li>
-            </ul>
+                <div class="category-aside">
+                    <p class="aside-tittle__category">Cafeteras manuales</p>
+                    <img class="right" src="assets/styles/img/products/icons/right.png" alt="">
+                </div>
+                <ul class="list-aside">
+                    <li data-subcategory="Italiana" class="li-subcategory">Cafetera italiana</li>
+                    <li data-subcategory="Francesa" class="li-subcategory">Cafetera francesa</li>
+                    <li data-category="Manual" class="li-subcategory">Todas</li>
+                </ul>
 
-            <div class="category-aside">
-                <p class="aside-tittle__category">Tazas</p>
-                <img class="right" src="assets/styles/img/products/icons/right.png" alt="">
-            </div>
-            <ul class="list-aside">
-                <li data-subcategory="Espresso Taza" class="li-subcategory">Espresso</li>
-                <li data-subcategory="Largo" class="li-subcategory">Café largo</li>
-                <li data-subcategory="Latte" class="li-subcategory">Latte</li>
-                <li data-subcategory="Capuccino" class="li-subcategory">Capuccino</li>
-                <li data-category="Taza" class="li-subcategory">Todas</li>
-            </ul>
+                <div class="category-aside">
+                    <p class="aside-tittle__category">Tazas</p>
+                    <img class="right" src="assets/styles/img/products/icons/right.png" alt="">
+                </div>
+                <ul class="list-aside">
+                    <li data-subcategory="Espresso Taza" class="li-subcategory">Espresso</li>
+                    <li data-subcategory="Largo" class="li-subcategory">Café largo</li>
+                    <li data-subcategory="Latte" class="li-subcategory">Latte</li>
+                    <li data-subcategory="Capuccino" class="li-subcategory">Capuccino</li>
+                    <li data-category="Taza" class="li-subcategory">Todas</li>
+                </ul>
 
-            <div class="category-aside">
-                <p class="aside-tittle__category" data-category="Combos">Combos</p>
-                <!-- LA IMG VACIA ES PARA QUE JS NO ME ROTE "EL ULTIMO HIJO" DEL DIV AL CUAL LE AGREGO UNA CLASE QUE HACE QUE SE ROTE, ASÍ QUE LO QUE ROTARÍA ES UNA IMAGEN VACIA-->
-                <img src="" alt="">
-            </div>
-     
+                <div class="category-aside">
+                    <p class="aside-tittle__category" data-category="Combos">Combos</p>
+                    <!-- LA IMG VACIA ES PARA QUE JS NO ME ROTE "EL ULTIMO HIJO" DEL DIV AL CUAL LE AGREGO UNA CLASE QUE HACE QUE SE ROTE, ASÍ QUE LO QUE ROTARÍA ES UNA IMAGEN VACIA-->
+                    <img src="" alt="">
+                </div>
+        
 
 
-            <div class="category-aside">
-                <p class="aside-tittle__category" data-category="Todos">Todos</p>
-                <!-- LA IMG VACIA ES PARA QUE JS NO ME ROTE "EL ULTIMO HIJO" DEL DIV AL CUAL LE AGREGO UNA CLASE QUE HACE QUE SE ROTE, ASÍ QUE LO QUE ROTARÍA ES UNA IMAGEN VACIA-->
-                <img src="" alt="">
-            </div>
+                <div class="category-aside">
+                    <p class="aside-tittle__category" data-category="Todos">Todos</p>
+                    <!-- LA IMG VACIA ES PARA QUE JS NO ME ROTE "EL ULTIMO HIJO" DEL DIV AL CUAL LE AGREGO UNA CLASE QUE HACE QUE SE ROTE, ASÍ QUE LO QUE ROTARÍA ES UNA IMAGEN VACIA-->
+                    <img src="" alt="">
+                </div>
+                </div>
+            </aside>
+            <div class="main-products">
+                <h1>Productos encontrados👇</h1>
+                <div class="cards-container">
 
-        </aside>
-        <div class="main-products">
-            <h1>Productos encontrados👇</h1>
-            <div class="cards-container">
-
-            </div>
-            <div class="container-buttons__pag">
-                <div class="prevBtn">-</div>
-                <div class="current-page">0</div>
-                <div class="nextBtn">+</div>
+                </div>
+                <div class="container-buttons__pag">
+                    <div class="prevBtn">-</div>
+                    <div class="current-page">0</div>
+                    <div class="nextBtn">+</div>
+                </div>
             </div>
         </div>
     </section>

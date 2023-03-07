@@ -22,89 +22,101 @@
         </div>
     </a>
     <header id="header">
+        
+            <div class="header-top">
+                <div class="container">
+                    <div class="header-container__logo">
+                        <img src="./assets/styles/img/header/logo3.png" alt="Logo de la empresa" class="logo-header">
+                    </div>
+                    
+                    <div class="search-input">
+                        <label for="search-product"></label>
+                        <input type="text" id="search-product" placeholder="Busque aquí un producto">
+                        <div>
+                            <img src="./assets/styles/img/header/search.png" alt="Lupa">
+                        </div>
+                    </div>
+                    
+                    <div class="container-labels">
 
-        <div class="header-top">
-            <div class="header-container__logo">
-                <img src="./assets/styles/img/header/logo3.png" alt="Logo de la empresa" class="logo-header">
+ 
+                    
+                        <div class="label-search">
+                            <img src="./assets/styles/img/header/search.png" alt="Lupa">
+                        </div>
+                        
+                        <a href="login.html">
+                            <div class="label-login">
+                                <img src="./assets/styles/img/header/user.png" alt="Usuario">
+                                <!-- <p class="login-text">Login</p> -->
+                            </div>
+                        </a>
+
+                        <div class="label-cart">
+                            <div class="label-cart__numbers">
+                                0
+                            </div>
+                            <img src="./assets/styles/img/header/cart.png" alt="Carrito">
+                        </div>
+
+                    </div>
+                </div>
             </div>
     
-            
-            <div class="container-labels">
-                <div class="search-input">
-                    <label for="search-product"></label>
-                    <input type="text" id="search-product" placeholder="Busque aquí un producto">
-                    <div>
-                        <img src="./assets/styles/img/header/search.png" alt="Lupa">
+            <div class="header-bottom">
+                <div class="container">
+                <nav class="nav-bar">
+                    <ul class="nav-bar__ul">
+                        <li>
+                            <a href="index.html">
+                                Home
+                            </a>
+                        
+                        <li>
+                            <a href="#section-three">
+                                Nosotros
+                            </a>
+                        </li>
+    
+                        <li>
+                            <a href="productos.html">
+                                Productos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#section-four">
+                                Contacto
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="label-menu">
+                        <img src="./assets/styles/img/header/menu.png" alt="Logo del menú">
                     </div>
-                </div>
-                <a href="login.html">
-                    <div class="label-login">
-                        <img src="./assets/styles/img/header/user.png" alt="Usuario">
-                        <p class="login-text">Login</p>
-                    </div>
-                </a>
-                <div class="label-cart">
-                    <div class="label-cart__numbers">
-                        0
-                    </div>
-                    <img src="./assets/styles/img/header/cart.png" alt="Carrito">
-                </div>
-
+                </nav>
             </div>
         </div>
-
-        <div class="header-bottom">
-            <nav class="nav-bar">
-                <ul class="nav-bar__ul">
-                    <li>
-                        <a href="index.html">
-                            Home
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="#section-three">
-                            Nosotros
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="productos.html">
-                            Productos
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#section-four">
-                            Contacto
-                        </a>
-                    </li>
-                </ul>
-                <!-- <div class="label-menu">
-                    <img src="./assets/header/menu.png" alt="Logo del menú">
-                </div> -->
-            </nav>
-        </div>
-
     </header>
 
     <main>
         <section id="hero">
-            <div class="hero__container">
+            <div class="container">
                 <div class="hero-left" >
-                    <h1 class="tittle-hero">Tenemos todo para los</h1><span>CoffeeLovers</span>
+                    <h1 class="tittle-hero">Tenemos todo para los <span>CoffeeLovers</span></h1>
                     <button class="button-hero"type="button">Ir al shop</button>
                 </div>
-            </div>
-            <div class="hero-right">
-                <img src="assets/styles/img/hero/paquetecafemartinez.png" alt="">
-            </div>
+                <img src="assets/styles/img/hero/img-hero.png" alt="">
+                
+            </div> 
         </section>
+
         <section id="section-dos">
-                <h2 data-aos="zoom-out-up" data-aos-duration="1500">Nuestros Productos</h2>
-                 <div class="carrousel-general">
-                    <div class="carrousel-big">
-                       
-                        <div class="carrousel-one carrousel-big__div">
+            <h2 data-aos="zoom-out-up" data-aos-duration="1500">Nuestros Productos</h2>
+
+            <div class="container">
+                    <!-- <div class="prevCarrousel"><img src="assets/styles/img/section-dos/icons/left.png" alt=""></div> -->
+                    <div class="carrousel-general">
+                        <div class="carrousel-big">
+                            
                             <div class="product-card">
                                 <div class="container-img__product">
                                     <img src="assets/JS/img/cafeteras/capsula/moulinex/moulinex2.webp" alt="">
@@ -118,7 +130,59 @@
                                     </button>
                                 </div>
                             </div>
-
+                            <div class="product-card">
+                                <div class="container-img__product">
+                                    <img src="./assets/JS/img/martinez/brasil.webp" alt="">
+                                </div>
+                                <div class="container-info__product">
+                                    <h3 class="name-product">Café Martinez Brasil</h3>
+                                    <p class="price-product">$1500</p>
+                                    <button class="add-cart" data-id="35">
+                                    Añadir al carrito
+                                    <img src="./assets/JS/img/icons/cart.png" class="button-add__icon" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="container-img__product">
+                                    <img src="./assets/JS/img/capsulas/nescafe/espresso.webp" alt="">
+                                </div>
+                                <div class="container-info__product">
+                                    <h3 class="name-product">Espresso - Café en capsulas</h3>
+                                    <p class="price-product">$1500</p>
+                                    <button class="add-cart" data-id="35">
+                                    Añadir al carrito
+                                    <img src="./assets/JS/img/icons/cart.png" class="button-add__icon" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="container-img__product">
+                                    <img src="assets/JS/img/cafeteras/francesa/prensafrancesa3.jpg" alt="">
+                                </div>
+                                <div class="container-info__product">
+                                    <h3 class="name-product">Cafetera Francesa Bronce</h3>
+                                    <p class="price-product">$5000</p>
+                                    <button class="add-cart" data-id="35">
+                                    Añadir al carrito
+                                    <img src="./assets/JS/img/icons/cart.png" class="button-add__icon" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card">
+                                <div class="container-img__product">
+                                    <img src="assets/JS/img/tazas/latte/latteporcelana.jpg" alt="">
+                                </div>
+                                <div class="container-info__product">
+                                    <h3 class="name-product">Taza Café Latte Porcelana</h3>
+                                    <p class="price-product">$3000</p>
+                                    <button class="add-cart" data-id="35">
+                                    Añadir al carrito
+                                    <img src="./assets/JS/img/icons/cart.png" class="button-add__icon" alt="">
+                                    </button>
+                                </div>
+                            </div>
                             <div class="product-card">
                                 <div class="container-img__product">
                                     <img src="assets/JS/img/cafeteras/capsula/moulinex/moulinex2.webp" alt="">
@@ -132,7 +196,59 @@
                                     </button>
                                 </div>
                             </div>
-
+                            <div class="product-card">
+                                <div class="container-img__product">
+                                    <img src="./assets/JS/img/martinez/brasil.webp" alt="">
+                                </div>
+                                <div class="container-info__product">
+                                    <h3 class="name-product">Café Martinez Brasil</h3>
+                                    <p class="price-product">$1500</p>
+                                    <button class="add-cart" data-id="35">
+                                    Añadir al carrito
+                                    <img src="./assets/JS/img/icons/cart.png" class="button-add__icon" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="container-img__product">
+                                    <img src="./assets/JS/img/capsulas/nescafe/espresso.webp" alt="">
+                                </div>
+                                <div class="container-info__product">
+                                    <h3 class="name-product">Espresso - Café en capsulas</h3>
+                                    <p class="price-product">$1500</p>
+                                    <button class="add-cart" data-id="35">
+                                    Añadir al carrito
+                                    <img src="./assets/JS/img/icons/cart.png" class="button-add__icon" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="container-img__product">
+                                    <img src="assets/JS/img/cafeteras/francesa/prensafrancesa3.jpg" alt="">
+                                </div>
+                                <div class="container-info__product">
+                                    <h3 class="name-product">Cafetera Francesa Bronce</h3>
+                                    <p class="price-product">$5000</p>
+                                    <button class="add-cart" data-id="35">
+                                    Añadir al carrito
+                                    <img src="./assets/JS/img/icons/cart.png" class="button-add__icon" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card">
+                                <div class="container-img__product">
+                                    <img src="assets/JS/img/tazas/latte/latteporcelana.jpg" alt="">
+                                </div>
+                                <div class="container-info__product">
+                                    <h3 class="name-product">Taza Café Latte Porcelana</h3>
+                                    <p class="price-product">$3000</p>
+                                    <button class="add-cart" data-id="35">
+                                    Añadir al carrito
+                                    <img src="./assets/JS/img/icons/cart.png" class="button-add__icon" alt="">
+                                    </button>
+                                </div>
+                            </div>
                             <div class="product-card">
                                 <div class="container-img__product">
                                     <img src="assets/JS/img/cafeteras/capsula/moulinex/moulinex2.webp" alt="">
@@ -146,7 +262,59 @@
                                     </button>
                                 </div>
                             </div>
-
+                            <div class="product-card">
+                                <div class="container-img__product">
+                                    <img src="./assets/JS/img/martinez/brasil.webp" alt="">
+                                </div>
+                                <div class="container-info__product">
+                                    <h3 class="name-product">Café Martinez Brasil</h3>
+                                    <p class="price-product">$1500</p>
+                                    <button class="add-cart" data-id="35">
+                                    Añadir al carrito
+                                    <img src="./assets/JS/img/icons/cart.png" class="button-add__icon" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="container-img__product">
+                                    <img src="./assets/JS/img/capsulas/nescafe/espresso.webp" alt="">
+                                </div>
+                                <div class="container-info__product">
+                                    <h3 class="name-product">Espresso - Café en capsulas</h3>
+                                    <p class="price-product">$1500</p>
+                                    <button class="add-cart" data-id="35">
+                                    Añadir al carrito
+                                    <img src="./assets/JS/img/icons/cart.png" class="button-add__icon" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="container-img__product">
+                                    <img src="assets/JS/img/cafeteras/francesa/prensafrancesa3.jpg" alt="">
+                                </div>
+                                <div class="container-info__product">
+                                    <h3 class="name-product">Cafetera Francesa Bronce</h3>
+                                    <p class="price-product">$5000</p>
+                                    <button class="add-cart" data-id="35">
+                                    Añadir al carrito
+                                    <img src="./assets/JS/img/icons/cart.png" class="button-add__icon" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card">
+                                <div class="container-img__product">
+                                    <img src="assets/JS/img/tazas/latte/latteporcelana.jpg" alt="">
+                                </div>
+                                <div class="container-info__product">
+                                    <h3 class="name-product">Taza Café Latte Porcelana</h3>
+                                    <p class="price-product">$3000</p>
+                                    <button class="add-cart" data-id="35">
+                                    Añadir al carrito
+                                    <img src="./assets/JS/img/icons/cart.png" class="button-add__icon" alt="">
+                                    </button>
+                                </div>
+                            </div>
                             <div class="product-card">
                                 <div class="container-img__product">
                                     <img src="assets/JS/img/cafeteras/capsula/moulinex/moulinex2.webp" alt="">
@@ -159,236 +327,129 @@
                                     <img src="./assets/JS/img/icons/cart.png" class="button-add__icon" alt="">
                                     </button>
                                 </div>
-                            </div> 
+                            </div>
+                            <div class="product-card">
+                                <div class="container-img__product">
+                                    <img src="./assets/JS/img/martinez/brasil.webp" alt="">
+                                </div>
+                                <div class="container-info__product">
+                                    <h3 class="name-product">Café Martinez Brasil</h3>
+                                    <p class="price-product">$1500</p>
+                                    <button class="add-cart" data-id="35">
+                                    Añadir al carrito
+                                    <img src="./assets/JS/img/icons/cart.png" class="button-add__icon" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="container-img__product">
+                                    <img src="./assets/JS/img/capsulas/nescafe/espresso.webp" alt="">
+                                </div>
+                                <div class="container-info__product">
+                                    <h3 class="name-product">Espresso - Café en capsulas</h3>
+                                    <p class="price-product">$1500</p>
+                                    <button class="add-cart" data-id="35">
+                                    Añadir al carrito
+                                    <img src="./assets/JS/img/icons/cart.png" class="button-add__icon" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="container-img__product">
+                                    <img src="assets/JS/img/cafeteras/francesa/prensafrancesa3.jpg" alt="">
+                                </div>
+                                <div class="container-info__product">
+                                    <h3 class="name-product">Cafetera Francesa Bronce</h3>
+                                    <p class="price-product">$5000</p>
+                                    <button class="add-cart" data-id="35">
+                                    Añadir al carrito
+                                    <img src="./assets/JS/img/icons/cart.png" class="button-add__icon" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card">
+                                <div class="container-img__product">
+                                    <img src="assets/JS/img/tazas/latte/latteporcelana.jpg" alt="">
+                                </div>
+                                <div class="container-info__product">
+                                    <h3 class="name-product">Taza Café Latte Porcelana</h3>
+                                    <p class="price-product">$3000</p>
+                                    <button class="add-cart" data-id="35">
+                                    Añadir al carrito
+                                    <img src="./assets/JS/img/icons/cart.png" class="button-add__icon" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                          
+                           
+                           
+            
                         </div>
 
+            </div>
+            <!-- <div class="nextCarrousel"><img src="assets/styles/img/section-dos/icons/right.png" alt=""></div> -->
 
-                        <div class="carrousel-two carrousel-big__div">
-                            <div class="product-card">
-                                <div class="container-img__product">
-                                    <img src="assets/JS/img/cafeteras/capsula/moulinex/moulinex2.webp" alt="">
-                                </div>
-                                <div class="container-info__product">
-                                    <h3 class="name-product">Cafetera de Capsulas Molinex</h3>
-                                    <p class="price-product">$3000</p>
-                                    <button class="add-cart" data-id="35">
-                                    Añadir al carrito
-                                    <img src="./assets/JS/img/icons/cart.png" class="button-add__icon" alt="">
-                                    </button>
-                                </div>
-                           </div>
-
-                            <div class="product-card">
-                                <div class="container-img__product">
-                                    <img src="assets/JS/img/cafeteras/capsula/moulinex/moulinex2.webp" alt="">
-                                </div>
-                                <div class="container-info__product">
-                                    <h3 class="name-product">Cafetera de Capsulas Molinex</h3>
-                                    <p class="price-product">$3000</p>
-                                    <button class="add-cart" data-id="35">
-                                    Añadir al carrito
-                                    <img src="./assets/JS/img/icons/cart.png" class="button-add__icon" alt="">
-                                    </button>
-                                </div>
-                           </div>
-
-                            <div class="product-card">
-                                <div class="container-img__product">
-                                    <img src="assets/JS/img/cafeteras/capsula/moulinex/moulinex2.webp" alt="">
-                                </div>
-                                <div class="container-info__product">
-                                    <h3 class="name-product">Cafetera de Capsulas Molinex</h3>
-                                    <p class="price-product">$3000</p>
-                                    <button class="add-cart" data-id="35">
-                                    Añadir al carrito
-                                    <img src="./assets/JS/img/icons/cart.png" class="button-add__icon" alt="">
-                                    </button>
-                                </div>
-                           </div>
-
-                            <div class="product-card">
-                                <div class="container-img__product">
-                                    <img src="assets/JS/img/cafeteras/capsula/moulinex/moulinex2.webp" alt="">
-                                </div>
-                                <div class="container-info__product">
-                                    <h3 class="name-product">Cafetera de Capsulas Molinex</h3>
-                                    <p class="price-product">$3000</p>
-                                    <button class="add-cart" data-id="35">
-                                    Añadir al carrito
-                                    <img src="./assets/JS/img/icons/cart.png" class="button-add__icon" alt="">
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carrousel-three carrousel-big__div">
-                            <div class="product-card">
-                                <div class="container-img__product">
-                                    <img src="assets/JS/img/cafeteras/capsula/moulinex/moulinex2.webp" alt="">
-                                </div>
-                                <div class="container-info__product">
-                                    <h3 class="name-product">Cafetera de Capsulas Molinex</h3>
-                                    <p class="price-product">$3000</p>
-                                    <button class="add-cart" data-id="35">
-                                    Añadir al carrito
-                                    <img src="./assets/JS/img/icons/cart.png" class="button-add__icon" alt="">
-                                    </button>
-                                </div>
-                           </div>
-
-                            <div class="product-card">
-                                <div class="container-img__product">
-                                    <img src="assets/JS/img/cafeteras/capsula/moulinex/moulinex2.webp" alt="">
-                                </div>
-                                <div class="container-info__product">
-                                    <h3 class="name-product">Cafetera de Capsulas Molinex</h3>
-                                    <p class="price-product">$3000</p>
-                                    <button class="add-cart" data-id="35">
-                                    Añadir al carrito
-                                    <img src="./assets/JS/img/icons/cart.png" class="button-add__icon" alt="">
-                                    </button>
-                                </div>
-                           </div>
-
-                            <div class="product-card">
-                                <div class="container-img__product">
-                                    <img src="assets/JS/img/cafeteras/capsula/moulinex/moulinex2.webp" alt="">
-                                </div>
-                                <div class="container-info__product">
-                                    <h3 class="name-product">Cafetera de Capsulas Molinex</h3>
-                                    <p class="price-product">$3000</p>
-                                    <button class="add-cart" data-id="35">
-                                    Añadir al carrito
-                                    <img src="./assets/JS/img/icons/cart.png" class="button-add__icon" alt="">
-                                    </button>
-                                </div>
-                           </div>
-
-                            <div class="product-card">
-                                <div class="container-img__product">
-                                    <img src="assets/JS/img/cafeteras/capsula/moulinex/moulinex2.webp" alt="">
-                                </div>
-                                <div class="container-info__product">
-                                    <h3 class="name-product">Cafetera de Capsulas Molinex</h3>
-                                    <p class="price-product">$3000</p>
-                                    <button class="add-cart" data-id="35">
-                                    Añadir al carrito
-                                    <img src="./assets/JS/img/icons/cart.png" class="button-add__icon" alt="">
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carrousel-four carrousel-big__div">
-                            <div class="product-card">
-                                <div class="container-img__product">
-                                    <img src="assets/JS/img/cafeteras/capsula/moulinex/moulinex2.webp" alt="">
-                                </div>
-                                <div class="container-info__product">
-                                    <h3 class="name-product">Cafetera de Capsulas Molinex</h3>
-                                    <p class="price-product">$3000</p>
-                                    <button class="add-cart" data-id="35">
-                                    Añadir al carrito
-                                    <img src="./assets/JS/img/icons/cart.png" class="button-add__icon" alt="">
-                                    </button>
-                                </div>
-                           </div>
-
-                            <div class="product-card">
-                                <div class="container-img__product">
-                                    <img src="assets/JS/img/cafeteras/capsula/moulinex/moulinex2.webp" alt="">
-                                </div>
-                                <div class="container-info__product">
-                                    <h3 class="name-product">Cafetera de Capsulas Molinex</h3>
-                                    <p class="price-product">$3000</p>
-                                    <button class="add-cart" data-id="35">
-                                    Añadir al carrito
-                                    <img src="./assets/JS/img/icons/cart.png" class="button-add__icon" alt="">
-                                    </button>
-                                </div>
-                           </div>
-
-                            <div class="product-card">
-                                <div class="container-img__product">
-                                    <img src="assets/JS/img/cafeteras/capsula/moulinex/moulinex2.webp" alt="">
-                                </div>
-                                <div class="container-info__product">
-                                    <h3 class="name-product">Cafetera de Capsulas Molinex</h3>
-                                    <p class="price-product">$3000</p>
-                                    <button class="add-cart" data-id="35">
-                                    Añadir al carrito
-                                    <img src="./assets/JS/img/icons/cart.png" class="button-add__icon" alt="">
-                                    </button>
-                                </div>
-                           </div>
-
-                            <div class="product-card">
-                                <div class="container-img__product">
-                                    <img src="assets/JS/img/cafeteras/capsula/moulinex/moulinex2.webp" alt="">
-                                </div>
-                                <div class="container-info__product">
-                                    <h3 class="name-product">Cafetera de Capsulas Molinex</h3>
-                                    <p class="price-product">$3000</p>
-                                    <button class="add-cart" data-id="35">
-                                    Añadir al carrito
-                                    <img src="./assets/JS/img/icons/cart.png" class="button-add__icon" alt="">
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-     
             </div>
             <ul class="points">
                 <li class="point one-carrousel"></li>
                 <li class="point two-carrousel"></li>
                 <li class="point three-carrousel"></li>
                 <li class="point four-carrousel"></li>
+                <li class="point five-carrousel"></li>
+                <li class="point six-carrousel"></li>
             </ul>
+
+               
         </section>
         <section id="section-three">
-                
-                <div class="section-three__right">
-                    <h2>¿Que hacemos?</h2>
-                    <p>En nuestra tienda somos igual de fanáticos del café que vos, por eso pensamos en ofrecer todos los productos de cafetería en casa que puedan serte útiles, desde café en granos, molido, soluble, pasando por todos los tipos de cafeteras y llegando a agrables tazas para mejorar tu experiencia. <br>
-                    Tomar café no es simplemente tomar café es una experiencia y podes mejorarla si usás los productos correctos para tu gusto preparando tu café de la manera correcta</p>
-                    <button>Conocé más</button>
+                <div class="container">
+                    <div class="section-three__right">
+                        <h2>¿Que hacemos?</h2>
+                        <p>En nuestra tienda somos igual de fanáticos del café que vos, por eso pensamos en ofrecer todos los productos de cafetería en casa que puedan serte útiles, desde café en granos, molido, soluble, pasando por todos los tipos de cafeteras y llegando a agrables tazas para mejorar tu experiencia. <br>
+                        Tomar café no es simplemente tomar café es una experiencia y podes mejorarla si usás los productos correctos para tu gusto preparando tu café de la manera correcta</p>
+                        <button>Conocé más</button>
+                    </div>
                 </div>
-                
+
         </section>
         <section id="section-four">
-            <div class="section-four__left">
-                <p>ROSARIO · COFFEE · MARKET</p>
-                <h2>C O N T A C T A N O S</h2>
-                <form class="form-contact" action="submit">
-                    <label for="name"></label>
-                    <input type="text" id="name" placeholder="NOMBRE COMPLETO">
-                    <label for="email"></label>
-                    <input type="email" id="name" placeholder="CORREO ELECTRÓNICO">
-                    <textarea class="textarea" name="" id="message" cols="40" rows="7" placeholder="ESCRIBE TU MENSAJE AQUÍ"></textarea>
-                    <button type="submit">Enviar</button>
-                </form>
+            <div class="container">
+                <div class="section-four__left">
+                    <p>ROSARIO · COFFEE · MARKET</p>
+                    <h2>CONTACTANOS</h2>
+                    <form class="form-contact" action="submit">
+                        <label for="name"></label>
+                        <input type="text" id="name" placeholder="NOMBRE COMPLETO">
+                        <label for="email"></label>
+                        <input type="email" id="name" placeholder="CORREO ELECTRÓNICO">
+                        <textarea class="textarea" name="" id="message" cols="40" rows="7" placeholder="ESCRIBE TU MENSAJE AQUÍ"></textarea>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+                <div class="section-four__right">
+                     <img src="assets/styles/img/header/logo3.png" alt="Logo de la empresa">
+                </div>
             </div>
-            <div class="section-four__right">
-                 <img src="assets/styles/img/header/logo3.png" alt="Logo de la empresa">
-            </div>
+
         </section>
 
     </main>
     
     <footer>
-        
-        <div class="container-footer">
-            <img src="assets/styles/img/footer/logo-footer.png" alt="">
-        <p>Realizado con ❤️ por Lucas Palú <br>
-            Copyright © 2022 - Rosario Coffee Market
-         </p> 
+        <div class="container">
+            <div class="container-footer">
+                <!-- <img src="assets/styles/img/footer/logo-footer.png" alt=""> -->
+            <p>Realizado con ❤️ por Lucas Palú <br>
+                Copyright © 2022 - Rosario Coffee Market
+            </p> 
+            </div>
+            <div class="container-social">
+                <img src="assets/styles/img/footer/facebook.png" alt="">
+                <img src="assets/styles/img/footer/instagram.png" alt="">
+                <img src="assets/styles/img/footer/twitter.png" alt="">
+            </div>
         </div>
-        <div class="container-social">
-            <img src="assets/styles/img/footer/facebook.png" alt="">
-            <img src="assets/styles/img/footer/instagram.png" alt="">
-            <img src="assets/styles/img/footer/twitter.png" alt="">
-        </div>
-        
 
     </footer>
     <script src="./assets/JS/carrousel.js"></script>

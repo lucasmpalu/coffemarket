@@ -116,3 +116,8 @@ button:hover {
 aside li:hover {
     cursor: pointer;
 }
+
+.label-menu:hover {
+    cursor: pointer;
+
+}

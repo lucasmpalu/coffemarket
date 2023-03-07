@@ -8,7 +8,7 @@ $points.forEach((item, index) => {
 
     $points[index].addEventListener('click', () => {
         let position = index
-        let operation = position * -25
+        let operation = position * -15
         console.log($points)
         $big.style.transform = `translateX(${operation}%)`
         

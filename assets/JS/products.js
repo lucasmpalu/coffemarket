@@ -8,6 +8,11 @@ const $contenedorCards = document.querySelector('.contenedor-cards')
 const $nextBtn = document.querySelector('.nextBtn')
 const $prevBtn = document.querySelector('.prevBtn')
 const $currentPage = document.querySelector('.current-page')
+const $seeProducts = document.querySelector('.div-tittle-aside')
+const $containerCategorys = document.querySelector('.container-categorys')
+
+var mql = window.matchMedia("screen and (max-device-width: 480px) and (orientation: landscape)");
+
 
 let currentCategory = null
 
@@ -419,7 +424,7 @@ let arrayAllProducts = [
 
          //LATTE TAZA
 
-     {   name: 'Taza Café Latte Vidrio',
+     {   name: 'Taza Café Latte Porcelana',
      category: 'Taza',
      subcategory: 'Latte',
      marca: 'Porcelana Blanca',
@@ -428,7 +433,7 @@ let arrayAllProducts = [
      cantidad: 1,
      img: 'assets/JS/img/tazas/latte/latteporcelana.jpg'},
 
-     {   name: 'Taza Café Latte Vidrio',
+     {   name: 'Taza Café Latte Porcelana',
      category: 'Taza',
      subcategory: 'Latte',
      marca: 'Porcelana Negra',
@@ -800,6 +805,19 @@ const isNull = () => {
 
 }
 
+
+
+const  seeCategorys = (e) => {
+    const $iconForRotate = $seeProducts.lastElementChild
+
+    $containerCategorys.classList.toggle('productsBlock')
+    $iconForRotate.classList.toggle('rotateIconRight')
+
+}
+
+
+
+
 const init = () => {
 
     isNull()
@@ -809,6 +827,7 @@ const init = () => {
     $asideProducts.addEventListener('click', renderAll)
     $prevBtn.addEventListener('click', prevPage)
     $nextBtn.addEventListener('click', nextPage)
+    $seeProducts.addEventListener('click', seeCategorys)
 }
 
 init()

@@ -7,6 +7,7 @@
         <title>Login - Rosario Coffe Market</title>
         <link rel="stylesheet" href="./assets/styles/style.css">
         <link rel="stylesheet" href="./assets/styles/animation.css">
+        <link rel="stylesheet" href="./assets/styles/mediaqueries.css">
         <link rel="stylesheet" href="./assets/styles/login.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,10 +16,9 @@
     </head>
 <body>
    <header id="header">
-       
             <nav class="nav-bar">
                 <a href="index.html" class="back-home">
-                  <ul class="nav-bar__ul">
+                  <ul class="nav-bar__ul ul__login">
                     <img href="index.html" class="back-login" src="assets/styles/img/login/back.png" alt="">
                     <li>Volver al Home</li>
                 </ul>
@@ -26,20 +26,24 @@
             </nav>
     </header> 
 <main>
-    <section>
-        <div class="container-login">
+    <section id="section-login">
+        <div class="container">
+        <div class="container-login ">
             <div class="form-top">
                 <!-- <img src="assets/header/logo.png" alt="Logo de la empresa"> -->
-                <p>ROSARIO · COFFEE · MARKET</p>
+                <img src="assets/styles/img/header/logo3.png" alt="">
+
             </div>
                 <!-- ESTE FORM ESTÁ RECICLADO CON PROPIEDADES DEL INDEX -->
             <form class="form-contact" action="submit">
+
                 <h3>Sign In</h3>
 
                 <label for="user"></label>
                 <input type="text" id="user" placeholder="USUARIO">
                 <label for="password"></label>
                 <input type="password" id="password" placeholder="PASSWORD">
+
                 <a href="" class="forgot-password">¿Olvidaste tu contraseña?</a>
                 <button type="submit">Entrar</button>
                 <p>No tienes cuenta aún?</p>
@@ -49,6 +53,7 @@
 
 
     </div>
+</div>
 
     </section>
 </main>
