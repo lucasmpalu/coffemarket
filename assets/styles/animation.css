@@ -2,12 +2,14 @@
     border-right: 2px solid var(--letters-white);
     font-weight: 700;
     padding-right: 6px;
+    white-space: nowrap;
+	  overflow: hidden;
+      width: 100%;
     animation: typing 3s steps(14),
     blink .7s infinite step-end alternate;
-    overflow: hidden;
-    width: 100%;
     
 }
+
 
 .nav-bar__ul li:after {
     content: '';
@@ -29,8 +31,8 @@
 
 
 @keyframes typing {
-    from {
-        width: 0;
+    0% {
+        width: 0%;
     }
 
 
