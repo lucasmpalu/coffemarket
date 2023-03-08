@@ -5,8 +5,8 @@ const $labelCart = document.querySelector('.label-cart')
 const $cart = document.querySelector('.cart')
 const $closeCart = document.querySelector('.close-cart')
 const $productsContainer = document.querySelector('.cart-container')
-const $clearCart = document.querySelector('.btn-delete')
-const $payCart = document.querySelector('.btn-buy')
+const $btnClear = document.querySelector('.btn-delete')
+const $btnBuy = document.querySelector('.btn-buy')
 
 let contentCart = JSON.parse(localStorage.getItem('products')) || []//ACÁ VOY A TRAER TODA MI AGENDA
 
@@ -104,18 +104,26 @@ const loadCart = () => {
 
     if(contentCart.length === 0){
         $productsContainer.innerText = 'Su carrito está vacío.'
-        $clearCart.classList.add('disabledBtn')
-        $payCart.classList.add('disabledBtn')
+        $btnClear.classList.add('disabledBtn')
+        $btnBuy.classList.add('disabledBtn')
         return
     }
 
-    $clearCart.classList.remove('disabledBtn')
-    $payCart.classList.remove('disabledBtn')
+    $btnClear.classList.remove('disabledBtn')
+    $btnBuy.classList.remove('disabledBtn')
     renderCart(contentCart)
 
 
 }
 
+
+const clearCart = () => {
+
+    if(confirm('Desea vaciar el carrito?')){
+        contentCart = []
+        loadCart()
+    }
+}
 
 
 
@@ -138,8 +146,7 @@ const init = () => {
     })
     $cart.addEventListener('click', closeCart)
     document.addEventListener('DOMContentLoaded', loadCart)
-    $cart.addEventListener('click', clearCart)
-
+    $btnClear.addEventListener('click', clearCart)
 
 }
 
