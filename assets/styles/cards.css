@@ -15,7 +15,7 @@
     background-color: rgb(250, 250, 250);
 	color: var(--background);
 	padding: 1rem;
-	animation: fade 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+	animation: fade .33s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 @keyframes fade {
@@ -173,5 +173,9 @@
 	/* border: 1px solid var(--background); */
 	color: white;
 	font-weight: 900;
+  }
 
+  .disabledBtn {
+	background-color: gray!important;
+	cursor: not-allowed!important;
   }
