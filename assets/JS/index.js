@@ -113,7 +113,6 @@ const loadCart = () => {
     $btnBuy.classList.remove('disabledBtn')
     renderCart(contentCart)
 
-
 }
 
 

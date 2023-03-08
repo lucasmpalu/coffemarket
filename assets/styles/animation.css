@@ -132,7 +132,8 @@ aside li:hover {
     position: absolute;
     top: 0px;
     left: 0;
-    height: 100%;
+    min-height: 100vh;
+    height: 100%!important;
     width: 100%;
     z-index: 100; /*Para que quede por encima del resto de las cosas*/
 
@@ -148,7 +149,8 @@ aside li:hover {
     position: absolute;
     top: 0px;
     left: 0;
-    height: 100%;
+    min-height: 100vh;
+    height: 100%!important;
     width: 100%;
     z-index: 50; /*Para que quede por encima del resto de las cosas*/
     /*Efecto de Glassmorphismo*/

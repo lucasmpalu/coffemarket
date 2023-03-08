@@ -534,10 +534,11 @@ const renderSubcategory = (subcategory) => {
        $tittleDisabled.classList.add('displayBlock')
        $containerButtonPages.style.visibility = 'visible'
        isBtnDisabled()
-       if(mediaqueryList.matches && $overlay.classList.contains('displayBlock')){
-        $overlay.classList.remove('displayBlock')
-        $containerCategorys.classList.toggle('displayNone')
-    }
+       if(mediaqueryList.matches && $overlayBackAside.classList.contains('displayBlock')){
+           $overlayBackAside.classList.remove('displayBlock')
+           $containerCategorys.classList.remove('displayBlock')
+            $containerCategorys.classList.add('displayNone')
+        }
 
 
         let renderArray = arrayAllProducts.filter(item => {
@@ -562,9 +563,11 @@ const renderCategory = (category) => {
     $tittleDisabled.classList.add('displayBlock')    
     $containerButtonPages.style.visibility = 'visible'
     isBtnDisabled()
-    if(mediaqueryList.matches && $overlay.classList.contains('displayBlock')){
-        $overlay.classList.remove('displayBlock')
-        $containerCategorys.classList.toggle('displayNone')
+ 
+    if(mediaqueryList.matches && $overlayBackAside.classList.contains('displayBlock')){
+        $overlayBackAside.classList.remove('displayBlock')
+        $containerCategorys.classList.remove('displayBlock')
+        $containerCategorys.classList.add('displayNone')
 
     }
 
@@ -582,6 +585,7 @@ const renderCategory = (category) => {
         isBtnDisabled()
 
 
+
          return    
     }
 
@@ -595,6 +599,7 @@ const renderCategory = (category) => {
 
         lookContainerCards()
         isBtnDisabled()
+
 
 
     
@@ -759,10 +764,39 @@ const lookContainerCards = () => {
 const seeCategorys = (e) => {
     const $iconForRotate = $seeProducts.lastElementChild
 
-    $overlayBackAside.classList.toggle('displayBlock')
+    if(mediaqueryList.matches){
+        if($overlayBackAside.classList.contains('displayBlock')){
+        $overlayBackAside.classList.remove('displayBlock')
+        $containerCategorys.classList.remove('displayBlock')
+        $iconForRotate.classList.remove('rotateIconRight')
+        return
+    }
+        
 
-    $containerCategorys.classList.toggle('displayBlock')
-    $iconForRotate.classList.toggle('rotateIconRight')
+       
+            $overlayBackAside.classList.add('displayBlock')
+            $containerCategorys.classList.add('displayBlock')
+            $iconForRotate.classList.add('rotateIconRight')
+            return
+
+    }
+
+    if($overlayBackAside.classList.contains('displayBlock')){
+        $overlayBackAside.classList.remove('displayBlock')
+        $containerCategorys.classList.remove('displayBlock')
+        $iconForRotate.classList.remove('rotateIconRight')
+        return
+    }
+        
+
+            $overlayBackAside.classList.add('displayBlock')
+            $containerCategorys.classList.add('displayBlock')
+            $iconForRotate.classList.add('rotateIconRight')
+            return
+    
+
+    
+  
     
 
 
@@ -861,15 +895,15 @@ const isBtnDisabled = () => {
 
     console.log(pagination)
     if(pagination.prev == null){
-        $prevBtn.classList.add('disabled')
+        $prevBtn.classList.add('disabledBtn')
     } else {
-        $prevBtn.classList.remove('disabled')
+        $prevBtn.classList.remove('disabledBtn')
     }
 
     if(pagination.total == null || pagination.next == pagination.total) {
-        $nextBtn.classList.add('disabled')
+        $nextBtn.classList.add('disabledBtn')
     } else {
-        $nextBtn.classList.remove('disabled')
+        $nextBtn.classList.remove('disabledBtn')
     }
 
 }
@@ -890,9 +924,6 @@ const initProducts = () => {
     $prevBtn.addEventListener('click', prevPage)
     $nextBtn.addEventListener('click', nextPage)
     $seeProducts.addEventListener('click', seeCategorys)
-    // $labelMenu.addEventListener('click',function() {
-    //     $burgerMenu.classList.toggle('menu-active')
-    // }
     $cardsContainer.addEventListener('click', addCart)
     $overlayBackAside.addEventListener('click', overlayAsideOut)
 
