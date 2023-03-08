@@ -173,13 +173,14 @@
     .burger-menu {
         display: none;
         position: absolute;
-        background-color: var(--letters-white);
-        padding: 22vh 20px;
-        z-index: 100;
         top: -0px;
         left: 0px!important;
         right: 40%;
-        height: 100vh;
+        min-height: 100vh;
+        height: 100%;
+        padding: 22vh 20px;
+        background-color: var(--letters-white);
+        z-index: 100;
         box-shadow: 0 10px 10px -5px;
         animation: slide-right 1s cubic-bezier(0.075, 0.82, 0.165, 1);
         font-size: 1.5rem;
