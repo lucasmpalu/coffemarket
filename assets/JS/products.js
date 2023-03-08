@@ -11,10 +11,9 @@ const $currentPage = document.querySelector('.current-page')
 const $seeProducts = document.querySelector('.div-tittle-aside')
 const $containerCategorys = document.querySelector('.container-categorys')
 const $mainProducts = document.querySelector('.main-products')
-const $tittleDisabled = $mainProducts.firstElementChild
+const $tittleDisabled = document.querySelector('.tittle-searched-products')
 const $overlayBackAside = document.querySelector('.overlay-aside')
 var mediaqueryList = window.matchMedia("(max-width: 600px)");
-const $closeCart = document.querySelector('.close-cart')
 const $btnAdd = document.querySelector('.add-cart')
 
 
@@ -907,7 +906,6 @@ const init = () => {
     // $labelMenu.addEventListener('click',function() {
     //     $burgerMenu.classList.toggle('menu-active')
     // }
-    $cart.addEventListener('click', closeCart)
     $cardsContainer.addEventListener('click', addCart)
     $overlayBackAside.addEventListener('click', overlayAsideOut)
 

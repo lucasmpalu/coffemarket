@@ -99,6 +99,11 @@
         font-weight: 800;
     }
 
+    #section-dos h2 {
+        font-size: 2.8rem;
+
+    }
+
     .carrousel-big {
         width: 1000%;
     }
@@ -165,9 +170,9 @@
         justify-content: flex-start;
     }
 
-    .menu-active {
+    .burger-menu {
+        display: none;
         position: absolute;
-        display: flex;
         background-color: var(--letters-white);
         padding: 22vh 20px;
         z-index: 100;
@@ -255,6 +260,11 @@
 
     .section-four__left h2 {
         letter-spacing: 12px;
+
+    }
+
+    #section-dos h2 {
+        font-size: 2.5rem;
 
     }
 
