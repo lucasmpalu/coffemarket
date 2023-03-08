@@ -99,6 +99,14 @@
         font-weight: 800;
     }
 
+    .carrousel-big {
+        width: 1000%;
+    }
+
+    .seven-carrousel, .eight-carrousel, .nine-carrousel, .ten-carrousel {
+        display: block;
+    }
+
     .search-input {
         width: 220px!important;
     }
@@ -300,10 +308,18 @@
         width: 24px;
 
     }
-
-    .container-categorys{
-        display: none;
+    .container-categorys {
+        color: var(--background);
+        background-color: rgb(253, 253, 253);
+        width: 100%;
+        position: absolute;
+        top: 56px;
+        box-shadow: 0 10px 10px -5px;
+        display:none;
+        border-top: 1px solid rgba(128, 128, 128, 0.211);
     }
+    
+
 
 
 

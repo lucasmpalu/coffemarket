@@ -12,7 +12,11 @@ const $seeProducts = document.querySelector('.div-tittle-aside')
 const $containerCategorys = document.querySelector('.container-categorys')
 const $mainProducts = document.querySelector('.main-products')
 const $tittleDisabled = $mainProducts.firstElementChild
+const $overlayBackAside = document.querySelector('.overlay-aside')
 var mediaqueryList = window.matchMedia("(max-width: 600px)");
+const $closeCart = document.querySelector('.close-cart')
+const $btnAdd = document.querySelector('.add-cart')
+
 
 
 let currentCategory = null
@@ -256,7 +260,7 @@ let arrayAllProducts = [
         category: 'Maquina',
         subcategory: 'Cafetera-capsula',
         marca: 'Moulinex',
-        id: 26,
+        id: 48,
         price: 10000,
         cantidad: 1,
         img: './assets/JS/img/cafeteras/capsula/moulinex/moulinex2.webp'},
@@ -285,7 +289,7 @@ let arrayAllProducts = [
         category: 'Maquina',
         subcategory: 'Goteo',
         marca: 'Philips',
-        id: 27,
+        id: 47,
         price: 10000,
         cantidad: 1,
         img: './assets/JS/img/cafeteras/goteo/philips/philips2.jpg'},
@@ -472,6 +476,8 @@ let arrayAllProducts = [
      cantidad: 1,
      img: 'assets/JS/img/tazas/capuccino/capuccinolargo2.jpg'},
 
+     //48
+
 
 
 ]
@@ -497,6 +503,32 @@ const renderProduct = (product) => {
 
 }
 
+let contentCart = JSON.parse(localStorage.getItem('products')) || []//ACÁ VOY A TRAER TODA MI AGENDA
+
+let saveData = (item) => {
+    contentCart = [...contentCart, item]
+
+    saveToLocalStorage('products', contentCart)
+}
+
+const saveToLocalStorage = (key, array) => {
+
+    localStorage.setItem(key, JSON.stringify(array))
+
+
+ } 
+
+
+
+const addCart = (e) => {
+    if(e.target.classList.contains('add-cart')){
+       let x = e.target.dataset.id
+       let newProduct = arrayAllProducts.filter(item => item.id == x)
+       saveData(newProduct) 
+
+    }
+}
+
 const dividedArray = (arr, pages) => {
 
     let chunk = []
@@ -516,7 +548,11 @@ const clearProducts = () => {
 const renderSubcategory = (subcategory) => { 
        $tittleDisabled.classList.add('displayBlock')
        $containerButtonPages.style.visibility = 'visible'
-       isDisabled()
+       isBtnDisabled()
+       if(mediaqueryList.matches && $overlay.classList.contains('displayBlock')){
+        $overlay.classList.remove('displayBlock')
+        $containerCategorys.classList.toggle('displayNone')
+    }
 
 
         let renderArray = arrayAllProducts.filter(item => {
@@ -531,7 +567,7 @@ const renderSubcategory = (subcategory) => {
 
 
         $cardsContainer.innerHTML += newArray[0].map(product => { return renderProduct(product)}).join('')
-        isDisabled()
+        isBtnDisabled()
 
         $currentPage.innerText = '1'
 
@@ -540,6 +576,12 @@ const renderSubcategory = (subcategory) => {
 const renderCategory = (category) => {
     $tittleDisabled.classList.add('displayBlock')    
     $containerButtonPages.style.visibility = 'visible'
+    isBtnDisabled()
+    if(mediaqueryList.matches && $overlay.classList.contains('displayBlock')){
+        $overlay.classList.remove('displayBlock')
+        $containerCategorys.classList.toggle('displayNone')
+
+    }
 
 
     if(category == 'Todos') {
@@ -551,8 +593,8 @@ const renderCategory = (category) => {
         $cardsContainer.innerHTML += newArray[0].map(product => {
              return renderProduct(product)}).join('')
         $currentPage.innerText = '1'
-        addDisplayBlock()
-        isDisabled()
+        lookContainerCards()
+        isBtnDisabled()
 
 
          return    
@@ -566,8 +608,8 @@ const renderCategory = (category) => {
         pagination.total = newArray.length
         currentCategory = newArray
 
-        addDisplayBlock()
-        isDisabled()
+        lookContainerCards()
+        isBtnDisabled()
 
 
     
@@ -581,7 +623,7 @@ const renderCategory = (category) => {
 const renderGeneral = (e) => {
     let selectedSubcategory = e.target.dataset.subcategory
     let selectedCategory = e.target.dataset.category
-    isDisabled()
+    isBtnDisabled()
 
     if(selectedCategory != undefined){
 
@@ -715,7 +757,7 @@ const renderPagination = (currentCategory, index) => {
 
 }
 
-const addDisplayBlock = () => {
+const lookContainerCards = () => {
 
     if(mediaqueryList.matches){
         $mainProducts.classList.add('displayBlock')
@@ -732,9 +774,13 @@ const addDisplayBlock = () => {
 const seeCategorys = (e) => {
     const $iconForRotate = $seeProducts.lastElementChild
 
+    $overlayBackAside.classList.toggle('displayBlock')
+
     $containerCategorys.classList.toggle('displayBlock')
     $iconForRotate.classList.toggle('rotateIconRight')
-    $icon
+    
+
+
 }
 
 const disabledButton = (btn) => {
@@ -743,7 +789,7 @@ const disabledButton = (btn) => {
 
 const nextPage = (e) => {
     e.stopImmediatePropagation()
-    isDisabled()
+    isBtnDisabled()
     if( pagination.next == pagination.total) { 
         return }
 
@@ -751,7 +797,7 @@ const nextPage = (e) => {
     pagination.prev = pagination.current
     pagination.current += 1
     pagination.next += 1
-    isDisabled()
+    isBtnDisabled()
     $currentPage.innerText = pagination.next
 
     
@@ -768,11 +814,11 @@ const prevPage = (e) => {
     $currentPage.innerText = pagination.current
 
     renderPagination(currentCategory, pagination.prev)
-    isDisabled()
+    isBtnDisabled()
     pagination.current -= 1
     pagination.prev = pagination.prev == 0 ? null : pagination.prev - 1
     pagination.next -= 1
-    isDisabled()
+    isBtnDisabled()
 }
 
 const visibilityNextElement = (e) => {
@@ -826,7 +872,7 @@ const renderAll = (e) => {
     }
 }
 
-const isDisabled = () => {
+const isBtnDisabled = () => {
 
     console.log(pagination)
     if(pagination.prev == null){
@@ -843,18 +889,27 @@ const isDisabled = () => {
 
 }
 
+const overlayAsideOut = (e) => {
+    $overlayBackAside.classList.remove('displayBlock')
+    $containerCategorys.classList.remove('displayBlock')
+}
+
+
 
 const init = () => {
-    isDisabled()
+    isBtnDisabled()
     $asideProducts.addEventListener('click', visibilityNextElement)
     $asideProducts.addEventListener('click', renderGeneral)
     $asideProducts.addEventListener('click', renderAll)
     $prevBtn.addEventListener('click', prevPage)
     $nextBtn.addEventListener('click', nextPage)
     $seeProducts.addEventListener('click', seeCategorys)
-    $labelMenu.addEventListener('click',function() {
-        $burgerMenu.classList.toggle('menu-active')
-    })
+    // $labelMenu.addEventListener('click',function() {
+    //     $burgerMenu.classList.toggle('menu-active')
+    // }
+    $cart.addEventListener('click', closeCart)
+    $cardsContainer.addEventListener('click', addCart)
+    $overlayBackAside.addEventListener('click', overlayAsideOut)
 
 }
 

@@ -223,6 +223,8 @@ display: none;
     cursor: pointer;
 }
 
+
+
 .burger-list {
     position: relative;
 }
@@ -274,20 +276,46 @@ a {
 
 .cart {
     position: absolute;
-    top: 65px;
+    top: 0px;
     right: 0;
-    padding: 50px 30px;
-    background: var(--background);
+    padding: 80px 30px;
+    background: white;
     border-left: 1px solid var(--nav-bg);
     display: flex;
     flex-direction: column;
     gap: 30px;
-    height: calc(100vh - 65px);
+    height: 100vh;
     overflow-y: scroll;
-    z-index: 2;
+    z-index: 1000;
     min-width: 375px;
-    transform: translate(200%);
+    transform: translate(0%);
     transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
+    color: var(--background);
+    display: none;
+    box-shadow: 0 10px 10px -5px;
+
+  }
+
+  .close-cart {
+    height: 32px;
+    width: 32px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    cursor: pointer;
+}
+
+  .cart > h2{
+    color: var(--background);
+  }
+
+  .cart button {
+    width: 100%;
+  }
+
+  .cart button:hover {
+    border: 1px solid var(--background);
+    color: black;
   }
 
   .cart-container {
@@ -441,10 +469,6 @@ justify-content: center;
 
 }
 
-
-
-
-
 .prevCarrousel, .nextCarrousel {
     height: 2.2rem;
     width: 2.2rem;
@@ -456,8 +480,6 @@ justify-content: center;
     cursor: pointer;
 
 }
-
-
 
 .points {
     display: flex;
@@ -478,6 +500,10 @@ justify-content: center;
     transition: all 0.2s linear;
     background-color: var(--letters-orange) ;
     transform: scale(0.75);
+}
+
+.seven-carrousel, .eight-carrousel, .nine-carrousel, .ten-carrousel {
+    display: none;
 }
 
 /* SECTION TRES */
@@ -558,6 +584,7 @@ input {
 
 .textarea {
     width: 100%;
+    padding: 0.5rem;
     border: none;
     border-bottom: 2px solid var(--background);
     font-family: 'Outfit', sans-serif!important;
@@ -648,4 +675,8 @@ footer p {
 /* JS */
 .displayBlock {
     display: block!important;
+}
+
+.displayNone {
+    display: none!important;
 }
