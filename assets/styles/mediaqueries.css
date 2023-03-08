@@ -186,6 +186,10 @@
         font-size: 1.5rem;
     }
 
+    .burger-list li {
+        width: max-content;
+    }
+
     .burger-list li:after {
         content: '';
         position: absolute;
