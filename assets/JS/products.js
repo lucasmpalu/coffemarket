@@ -513,6 +513,7 @@ const addCart = (e) => {
        let x = e.target.dataset.id
        let newProduct = arrayAllProducts.filter(item => item.id == x)
        saveData(newProduct)
+       loadCart()
     }
 }
 
