@@ -289,11 +289,18 @@ a {
     z-index: 1000;
     min-width: 375px;
     transform: translate(0%);
+    animation: slide-left 1.3s cubic-bezier(0.075, 0.82, 0.165, 1);
     transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
     color: var(--background);
     display: none;
     box-shadow: 0 10px 10px -5px;
 
+  }
+
+  @keyframes slide-left {
+    
+    0% {transform: translate(200%);}
+    
   }
 
   .close-cart {
