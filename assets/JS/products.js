@@ -511,6 +511,7 @@ const addCart = (e) => {
        let newProduct = arrayAllProducts.filter(item => item.id == x)
        saveData(newProduct)
        loadCart()
+       totalCart()
     }
 }
 
@@ -534,9 +535,11 @@ const renderSubcategory = (subcategory) => {
        $tittleDisabled.classList.add('displayBlock')
        $containerButtonPages.style.visibility = 'visible'
        isBtnDisabled()
+       overlayAsideOut()
+
        if(mediaqueryList.matches && $overlayBackAside.classList.contains('displayBlock')){
-           $overlayBackAside.classList.remove('displayBlock')
-           $containerCategorys.classList.remove('displayBlock')
+                   overlayAsideOut()
+
             $containerCategorys.classList.add('displayNone')
         }
 
@@ -563,6 +566,7 @@ const renderCategory = (category) => {
     $tittleDisabled.classList.add('displayBlock')    
     $containerButtonPages.style.visibility = 'visible'
     isBtnDisabled()
+    overlayAsideOut()
  
     if(mediaqueryList.matches && $overlayBackAside.classList.contains('displayBlock')){
         $overlayBackAside.classList.remove('displayBlock')
@@ -766,40 +770,16 @@ const seeCategorys = (e) => {
 
     if(mediaqueryList.matches){
         if($overlayBackAside.classList.contains('displayBlock')){
-        $overlayBackAside.classList.remove('displayBlock')
-        $containerCategorys.classList.remove('displayBlock')
-        $iconForRotate.classList.remove('rotateIconRight')
+            overlayAsideOut()
+            $iconForRotate.classList.remove('rotateIconRight')
+            return
+        }
+    
+        $overlayBackAside.classList.add('displayBlock')
+        $containerCategorys.classList.add('displayBlock')
+        $iconForRotate.classList.add('rotateIconRight')
         return
     }
-        
-
-       
-            $overlayBackAside.classList.add('displayBlock')
-            $containerCategorys.classList.add('displayBlock')
-            $iconForRotate.classList.add('rotateIconRight')
-            return
-
-    }
-
-    if($overlayBackAside.classList.contains('displayBlock')){
-        $overlayBackAside.classList.remove('displayBlock')
-        $containerCategorys.classList.remove('displayBlock')
-        $iconForRotate.classList.remove('rotateIconRight')
-        return
-    }
-        
-
-            $overlayBackAside.classList.add('displayBlock')
-            $containerCategorys.classList.add('displayBlock')
-            $iconForRotate.classList.add('rotateIconRight')
-            return
-    
-
-    
-  
-    
-
-
 }
 
 const disabledButton = (btn) => {
@@ -809,8 +789,7 @@ const disabledButton = (btn) => {
 const nextPage = (e) => {
     e.stopImmediatePropagation()
     isBtnDisabled()
-    if( pagination.next == pagination.total) { 
-        return }
+    if( pagination.next == pagination.total) { return }
 
     renderPagination(currentCategory, pagination.next)
     pagination.prev = pagination.current
@@ -818,8 +797,6 @@ const nextPage = (e) => {
     pagination.next += 1
     isBtnDisabled()
     $currentPage.innerText = pagination.next
-
-    
 
 }
 
@@ -876,8 +853,6 @@ const visibilityNextElement = (e) => {
             nextElement.classList.toggle('toggleBlock')
         }, 150);
         return
-    
-
     }
 }
 
@@ -909,11 +884,10 @@ const isBtnDisabled = () => {
 }
 
 const overlayAsideOut = (e) => {
+
     $overlayBackAside.classList.remove('displayBlock')
     $containerCategorys.classList.remove('displayBlock')
 }
-
-
 
 
 const initProducts = () => {
@@ -926,6 +900,14 @@ const initProducts = () => {
     $seeProducts.addEventListener('click', seeCategorys)
     $cardsContainer.addEventListener('click', addCart)
     $overlayBackAside.addEventListener('click', overlayAsideOut)
+    window.addEventListener('resize', () => {
+        var min600 = window.matchMedia("(min-width: 600px)");
+        if(min600.matches){
+            $overlayBackAside.classList.remove('displayBlock')
+            $containerCategorys.classList.add('displayBlock')
+        }
+
+    })
 
 }
 

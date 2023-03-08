@@ -7,6 +7,7 @@ const $closeCart = document.querySelector('.close-cart')
 const $productsContainer = document.querySelector('.cart-container')
 const $btnClear = document.querySelector('.btn-delete')
 const $btnBuy = document.querySelector('.btn-buy')
+const $totalCart = document.querySelector('.total')
 
 let contentCart = JSON.parse(localStorage.getItem('products')) || []//ACÁ VOY A TRAER TODA MI AGENDA
 
@@ -112,6 +113,7 @@ const loadCart = () => {
     $btnClear.classList.remove('disabledBtn')
     $btnBuy.classList.remove('disabledBtn')
     renderCart(contentCart)
+    
 
 }
 
@@ -125,7 +127,14 @@ const clearCart = () => {
 }
 
 
+const totalCart = () => {
+    
+    
+    let x = contentCart.reduce((acc, curr) => acc + curr[0].price, 0)
 
+    $totalCart.innerText = `$ ${x}`
+
+}
 
 
 
@@ -145,8 +154,9 @@ const init = () => {
     })
     $cart.addEventListener('click', closeCart)
     document.addEventListener('DOMContentLoaded', loadCart)
+    document.addEventListener('DOMContentLoaded', totalCart)
     $btnClear.addEventListener('click', clearCart)
-
+    
 }
 
 init()
