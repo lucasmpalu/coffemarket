@@ -90,3 +90,88 @@
 	transition: all 1s;
 }
 
+
+
+/* CARD DEL CARRITO*/
+
+
+.cart-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	background-color:transparent;
+	padding: 20px;
+	border: 1px solid var(--background);
+	border-radius: 6px;
+  }
+  
+  .cart-item img {
+  height: 50px;
+  width: 50px;
+  }
+  
+  .cart-item p {
+	font-size: 1rem;
+  }
+  
+  .item-info {
+	display: flex;
+	flex-direction: column;
+	min-width: 110px;
+  }
+  
+  .item-title {
+	font-weight: 700;
+	font-size: 1.5rem;
+  }
+  
+  .item-bid {
+	font-weight: 300;
+	font-size: 12px;
+  }
+  
+  .item-price {
+	background: linear-gradient(to right, var(--letters-orange), #ffffff);
+	background-clip: text;
+	color: transparent;
+	-webkit-background-clip: text;
+	font-size: 16px;
+	font-weight: 800;
+  }
+  
+  .item-handler {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+  }
+  
+  .quantity-handler {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2px 8px;
+	border-radius: 5px;
+	color: var(--text-white);
+	font-weight: 400;
+  }
+  
+  .item-quantity {
+	color: var(--text-gray);
+  }
+  
+  .up {
+	background-color: var(--letters-orange);
+	/* border: 1px solid var(--background); */
+	color: white;
+	font-weight: 900;
+  }
+  
+  .down {
+	background-color: var(--letters-orange);
+	/* border: 1px solid var(--background); */
+	color: white;
+	font-weight: 900;
+
+  }

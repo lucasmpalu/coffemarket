@@ -502,20 +502,9 @@ const renderProduct = (product) => {
 
 }
 
-let contentCart = JSON.parse(localStorage.getItem('products')) || []//ACÁ VOY A TRAER TODA MI AGENDA
-
-let saveData = (item) => {
-    contentCart = [...contentCart, item]
-
-    saveToLocalStorage('products', contentCart)
-}
-
-const saveToLocalStorage = (key, array) => {
-
-    localStorage.setItem(key, JSON.stringify(array))
 
 
- } 
+
 
 
 
@@ -523,8 +512,7 @@ const addCart = (e) => {
     if(e.target.classList.contains('add-cart')){
        let x = e.target.dataset.id
        let newProduct = arrayAllProducts.filter(item => item.id == x)
-       saveData(newProduct) 
-
+       saveData(newProduct)
     }
 }
 
@@ -895,7 +883,8 @@ const overlayAsideOut = (e) => {
 
 
 
-const init = () => {
+
+const initProducts = () => {
     isBtnDisabled()
     $asideProducts.addEventListener('click', visibilityNextElement)
     $asideProducts.addEventListener('click', renderGeneral)
@@ -911,4 +900,4 @@ const init = () => {
 
 }
 
-init()
+initProducts()

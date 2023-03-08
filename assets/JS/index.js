@@ -4,8 +4,21 @@ const $overlay = document.querySelector('.overlay')
 const $labelCart = document.querySelector('.label-cart')
 const $cart = document.querySelector('.cart')
 const $closeCart = document.querySelector('.close-cart')
+const $productsContainer = document.querySelector('.cart-container')
 
+let contentCart = JSON.parse(localStorage.getItem('products')) || []//ACÁ VOY A TRAER TODA MI AGENDA
 
+let saveData = (item) => {
+    contentCart = [...contentCart, {...item, quantity: 1}]
+
+    saveToLocalStorage('products', contentCart)
+}
+
+const saveToLocalStorage = (key, array) => {
+
+    localStorage.setItem(key, JSON.stringify(array))
+
+ } 
 
 const closeCart = (e) => {
 
@@ -20,12 +33,10 @@ const closeCart = (e) => {
 
 
 const scrollOverlayOut = () => {
-    console.log('funciona')
 
     if($cart.classList.contains('displayBlock')){
         $overlay.classList.remove('displayBlock')
         $cart.classList.remove('displayBlock')
-
     }
 
     if ($overlay.classList.contains('displayBlock')) {
@@ -52,10 +63,59 @@ const closeMenu = (e) => {
 }
 
 
+const renderCartProducts = (product) => {
+    console.log(product[0])
+    console.log(product)
+
+    let {name, category, subcategory, marca, id, price, gramos, img } = product[0]
+    let {quantity} = product
+   
+
+    return `
+    <div class="cart-item">
+        <img src=${img} alt="Nft del carrito"/>
+        <div class="item-info">
+            <h3 class="item-title">${name}</h3>
+            <p class="item-bid">Precio:</p>
+            <span class="item-price">$${price}</span>
+        </div>
+        <div class="item-handler">
+            <span class="quantity-handler down" data-id=${id}>-</span>
+            <span class="item-quantity">${quantity}</span>
+            <span class="quantity-handler up" data-id=${id}>+</span>
+        </div>
+    </div>
+    `
+}
 
 
 
-init = () => {
+const renderCart = (arr) => {
+
+    $productsContainer.innerHTML += arr.map(item => renderCartProducts(item)).join('')
+
+}
+
+
+
+const loadCart = () => {
+
+    if(contentCart.length == 0){
+        $productsContainer.innerText = 'Su carrito está vacío.'
+        return
+    }
+    
+    renderCart(contentCart)
+
+
+}
+
+
+
+
+
+
+const init = () => {
     
     $labelMenu.addEventListener('click', function() {
         $burgerMenu.classList.add('displayBlock')
@@ -69,6 +129,7 @@ init = () => {
         $overlay.classList.add('displayBlock')
     })
     $cart.addEventListener('click', closeCart)
+    document.addEventListener('DOMContentLoaded', loadCart)
 
 
 }
