@@ -175,7 +175,3 @@
 	font-weight: 900;
   }
 
-  .disabledBtn {
-	background-color: gray!important;
-	cursor: not-allowed!important;
-  }

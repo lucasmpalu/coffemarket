@@ -4,6 +4,7 @@ const $overlay = document.querySelector('.overlay')
 const $labelCart = document.querySelector('.label-cart')
 const $cart = document.querySelector('.cart')
 const $closeCart = document.querySelector('.close-cart')
+const $closeMenu = document.querySelector('.close-cart')
 const $productsContainer = document.querySelector('.cart-container')
 const $btnClear = document.querySelector('.btn-delete')
 const $btnBuy = document.querySelector('.btn-buy')
@@ -11,7 +12,7 @@ const $totalCart = document.querySelector('.total')
 const $formSearch = document.querySelector('.form-search')
 const $inputSearch = document.querySelector('.input-search')
 const $btnSearch = document.querySelector('.btn-search')
-const $modal = document.querySelector('.add-modal')
+// const $modal = document.querySelector('.add-modal')
 
 let contentCart = JSON.parse(localStorage.getItem('products')) || []//ACÁ VOY A TRAER TODA MI AGENDA
 
@@ -56,13 +57,13 @@ const scrollOverlayOut = () => {
 
 const closeMenu = (e) => {
 
-    if (e.target.classList.contains('displayBlock')) {
+    if (e.target.classList.contains('close-menu')) {
         $burgerMenu.classList.remove('displayBlock')
         $overlay.classList.remove('displayBlock')
     }
 
     if(e.target.classList.contains('overlay')){
-        $burgerMenu.classList.remove('menu-active')
+        $burgerMenu.classList.remove('displayBlock')
         $overlay.classList.remove('displayBlock')
         $cart.classList.remove('displayBlock')
     }
@@ -112,18 +113,23 @@ const loadCart = () => {
     $btnBuy.classList.remove('disabledBtnCart')
     renderCart(contentCart)
 
-
 }
 
 const clearCart = () => {
 
-    if(confirm('Desea vaciar el carrito?')){
-        contentCart = []
-        saveToLocalStorage(contentCart)
-        loadCart()
-        totalCart()
+    if (contentCart.length) {                       //SOLO SI EL CARRITO TIENE COSAS ADENTRO, VOY A EJECUTAR EL IF CON EL CONFIRM DE ABAJO
+        if(confirm('Desea vaciar el carrito?')){
+            contentCart = []
+            saveToLocalStorage(contentCart)
+            loadCart()
+            totalCart()
+        }
     }
+  
 }
+
+
+
 
 const totalCart = () => {
     
@@ -133,37 +139,38 @@ const totalCart = () => {
 
 }
 
+const filterInput = (value) => {
+
+    return arrayAllProducts.filter(item => {
+    return item.name.toLowerCase().includes(value.toLowerCase().trim())
+    })   
+}
+
 const searchProducts = (e) => {
     e.preventDefault()
 
+
     let valueInput = $inputSearch.value
+    let newArray = dividedArray( filterInput(valueInput), 6 ) //DIVIDO EL ARRAY, DE 6 EN 6, PARA LA PAGINACIÓN
+   
+    clearProducts()  //LIMPIO EL CONTENEDOR DE LAS CARDS, SI HAY OTROS PRODUCTOS RENDERIZADOS
+    $containerButtonPages.style.visibility = 'visible' //HAGO APARECER LOS BOTONES QUE ESTÁN HIDDEN (EL CONTANEDOR DE LOS BTN)
+    $tittleDisabled.style.visibility = 'visible' //HAGO APARECER EL TITULO DE OBJETOS ENCONTRADOS QUE ESTÁ HIDDEN
+    pagination.total = newArray.length
+    currentCategory = newArray
+    isBtnDisabled() //ESTA FUNCIÓN LA PONGO ACÁ, PORQUE ARRIBA DE ESTO ACTUALICÉ LOS CODIGOS DE LA PAGINACIÓN
 
-    let a = arrayAllProducts.filter(item => 
-        item.name.toLowerCase() == valueInput.toLowerCase().trim()
-    )
-    let b = arrayAllProducts.filter(item =>
-        item.category.toLowerCase() == valueInput.toLowerCase().trim())
-        
-    let c = arrayAllProducts.filter(item =>
-        item.subcategory.toLowerCase() == valueInput.toLowerCase().trim())
-
-    let d = arrayAllProducts.filter(item =>
-        item.marca.toLowerCase() == valueInput.toLowerCase().trim())
-
-    let x = a.concat(b, c, d)
-
-    location.href = 'productos.html'
-    let newArray = dividedArray(x, 6)
-    $cardsContainer.innerHTML += x.map(product => { return renderProduct(newArray)}).join('')
-    console.log(newArray)
-    isBtnDisabled()
     $currentPage.innerText = '1'
+    $cardsContainer.innerHTML += newArray[0].map( product => { return renderProduct(product)}).join('')//muestro
+    // location.href = 'productos.html'
 
-}
+    }
+    
 
 const init = () => {
-    $formSearch.addEventListener('submit', searchProducts)
 
+    loadCart()
+    // isBtnDisabled()
     $labelMenu.addEventListener('click', function() {
         $burgerMenu.classList.add('displayBlock')
         $overlay.classList.add('displayBlock')
@@ -173,12 +180,14 @@ const init = () => {
     window.addEventListener('scroll', scrollOverlayOut)
     $labelCart.addEventListener('click', function() {
         $cart.classList.add('displayBlock')
-        $overlay.classList.add('displayBlock')
+        $overlay.classList.add('displayBlock')  
     })
     $cart.addEventListener('click', closeCart)
     document.addEventListener('DOMContentLoaded', loadCart)
     document.addEventListener('DOMContentLoaded', totalCart)
     $btnClear.addEventListener('click', clearCart)
+    $formSearch.addEventListener('submit', searchProducts)
+
 }
 
 init()

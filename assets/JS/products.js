@@ -15,6 +15,7 @@ const $tittleDisabled = document.querySelector('.tittle-searched-products')
 const $overlayBackAside = document.querySelector('.overlay-aside')
 var mediaqueryList = window.matchMedia("(max-width: 600px)");
 const $btnAdd = document.querySelector('.add-cart')
+const $modalProducts = document.getElementsByClassName('add-modal')
 
 let currentCategory = null
 
@@ -503,6 +504,7 @@ const addCart = (e) => {
 
 
     if(e.target.classList.contains('add-cart')){
+        //ESTE IF, ES PARA SI YA EXISTE EN EL CARRITO, EJECUTO Y LE DOY RETURN, COPIO MI CARRITO Y MODIFICO EL ELEMENTO QUE YA EXISTE Y LE AUMENTO EL QUANTITY
         if(contentCart.some(item => item[0].id == x)){
 
             contentCart = contentCart.map(item => {
@@ -513,15 +515,9 @@ const addCart = (e) => {
             saveToLocalStorage(contentCart)
             loadCart()
             totalCart()
-
-            // $modal.classList.add('active-modal')
-
-            // setTimeout(() => {
-            //     $modal.classList.remove('active-modal')
-            // }, 2000);
-            // return
+            return
         }
-
+        //SI NO EXISTE EN EL CARRITO, EJECUTO ESTO Y LO AGREGO
         let newProduct = arrayAllProducts.filter(item => item.id == x)
         saveData(newProduct)
         loadCart()
@@ -572,7 +568,6 @@ const renderSubcategory = (subcategory) => {
 
         $cardsContainer.innerHTML += newArray[0].map(product => { return renderProduct(product)}).join('')
         isBtnDisabled()
-
         $currentPage.innerText = '1'
 
 }
@@ -757,8 +752,6 @@ const renderPagination = (currentCategory, index) => {
     $cardsContainer.innerHTML = ''
     $cardsContainer.innerHTML += render.map(item => {
         return renderProduct(item)}).join('')
-
-
 }
 
 const lookContainerCards = () => {

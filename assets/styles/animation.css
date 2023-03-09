@@ -3,7 +3,7 @@
     font-weight: 700;
     padding-right: 6px;
     white-space: nowrap;
-	  overflow: hidden;
+	overflow: hidden;
       width: 100%;
     animation: typing 3s steps(14),
     blink .7s infinite step-end alternate;
@@ -51,8 +51,8 @@
     }
 }
 
-.hero-right img {
-    animation: imageZoom 2s linear;
+#hero img {
+    animation: imageZoom 1s linear;
 }
 
 @keyframes imageZoom {

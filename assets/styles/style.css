@@ -324,6 +324,7 @@ a {
     
   }
 
+
   .close-cart {
     height: 32px;
     width: 32px;
@@ -735,4 +736,11 @@ footer p {
 .active-modal {
   transform: translateY(0);
   transition: all 0.5s ease-in;
+}
+
+.disabledBtnCart {
+    background-color: rgba(108, 108, 108, 0.2);
+    color: black;
+    border: 1px solid black;
+    cursor: not-allowed!important;
 }
