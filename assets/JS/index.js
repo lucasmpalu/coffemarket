@@ -8,18 +8,22 @@ const $productsContainer = document.querySelector('.cart-container')
 const $btnClear = document.querySelector('.btn-delete')
 const $btnBuy = document.querySelector('.btn-buy')
 const $totalCart = document.querySelector('.total')
+const $formSearch = document.querySelector('.form-search')
+const $inputSearch = document.querySelector('.input-search')
+const $btnSearch = document.querySelector('.btn-search')
+const $modal = document.querySelector('.add-modal')
 
 let contentCart = JSON.parse(localStorage.getItem('products')) || []//ACÁ VOY A TRAER TODA MI AGENDA
 
 let saveData = (item) => {
     contentCart = [...contentCart, {...item, quantity: 1}]
 
-    saveToLocalStorage('products', contentCart)
+    saveToLocalStorage(contentCart)
 }
 
-const saveToLocalStorage = (key, array) => {
+const saveToLocalStorage = (array) => {
 
-    localStorage.setItem(key, JSON.stringify(array))
+    localStorage.setItem('products', JSON.stringify(array))
 
  } 
 
@@ -67,8 +71,6 @@ const closeMenu = (e) => {
 
 
 const renderCartProducts = (product) => {
-    console.log(product[0])
-    console.log(product)
 
     let {name, category, subcategory, marca, id, price, gramos, img } = product[0]
     let {quantity} = product
@@ -91,44 +93,39 @@ const renderCartProducts = (product) => {
     `
 }
 
-
-
 const renderCart = (arr) => {
 
     $productsContainer.innerHTML += arr.map(item => renderCartProducts(item)).join('')
 
 }
 
-
-
 const loadCart = () => {
 
-    if(contentCart.length === 0){
+    if(contentCart.length == 0){
         $productsContainer.innerText = 'Su carrito está vacío.'
-        $btnClear.classList.add('disabledBtn')
-        $btnBuy.classList.add('disabledBtn')
+        $btnClear.classList.add('disabledBtnCart')
+        $btnBuy.classList.add('disabledBtnCart')
         return
     }
 
-    $btnClear.classList.remove('disabledBtn')
-    $btnBuy.classList.remove('disabledBtn')
+    $btnClear.classList.remove('disabledBtnCart')
+    $btnBuy.classList.remove('disabledBtnCart')
     renderCart(contentCart)
-    
+
 
 }
-
 
 const clearCart = () => {
 
     if(confirm('Desea vaciar el carrito?')){
         contentCart = []
+        saveToLocalStorage(contentCart)
         loadCart()
+        totalCart()
     }
 }
 
-
 const totalCart = () => {
-    
     
     let x = contentCart.reduce((acc, curr) => acc + curr[0].price, 0)
 
@@ -136,11 +133,37 @@ const totalCart = () => {
 
 }
 
+const searchProducts = (e) => {
+    e.preventDefault()
 
+    let valueInput = $inputSearch.value
 
+    let a = arrayAllProducts.filter(item => 
+        item.name.toLowerCase() == valueInput.toLowerCase().trim()
+    )
+    let b = arrayAllProducts.filter(item =>
+        item.category.toLowerCase() == valueInput.toLowerCase().trim())
+        
+    let c = arrayAllProducts.filter(item =>
+        item.subcategory.toLowerCase() == valueInput.toLowerCase().trim())
+
+    let d = arrayAllProducts.filter(item =>
+        item.marca.toLowerCase() == valueInput.toLowerCase().trim())
+
+    let x = a.concat(b, c, d)
+
+    location.href = 'productos.html'
+    let newArray = dividedArray(x, 6)
+    $cardsContainer.innerHTML += x.map(product => { return renderProduct(newArray)}).join('')
+    console.log(newArray)
+    isBtnDisabled()
+    $currentPage.innerText = '1'
+
+}
 
 const init = () => {
-    
+    $formSearch.addEventListener('submit', searchProducts)
+
     $labelMenu.addEventListener('click', function() {
         $burgerMenu.classList.add('displayBlock')
         $overlay.classList.add('displayBlock')
@@ -156,7 +179,6 @@ const init = () => {
     document.addEventListener('DOMContentLoaded', loadCart)
     document.addEventListener('DOMContentLoaded', totalCart)
     $btnClear.addEventListener('click', clearCart)
-    
 }
 
 init()

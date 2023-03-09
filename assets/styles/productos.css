@@ -15,7 +15,6 @@ body {
 .section-uno__products .container {
     justify-content: flex-start;
     align-items: flex-start;
-    min-height: 100vh;
 }
 
 .main-products {
@@ -176,8 +175,8 @@ transform: scale(0.94);
 cursor: pointer;
 }
 
-.disabled {
-    background-color: gray;
+.disabledBtnCart {
+    background-color: rgba(108, 108, 108, 0.593);
 }
 
 /* JS */

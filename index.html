@@ -31,13 +31,15 @@
                         <img src="./assets/styles/img/header/logo3.png" alt="Logo de la empresa" class="logo-header">
                     </div>
                     
-                    <div class="search-input">
+                    <form class="form-search">
                         <label for="search-product"></label>
-                        <input type="text" id="search-product" placeholder="Busque aquí un producto">
+                        <input type="text" class="input-search" id="search-product" placeholder="Busque aquí un producto">
                         <div>
-                            <img src="./assets/styles/img/header/search.png" alt="Lupa">
+                            <button type="button" class="btn-search">
+                                <img src="./assets/styles/img/header/search.png" alt="Lupa">
+                            </button>
                         </div>
-                    </div>
+                    </form>
                     
                     <div class="container-labels">
 
@@ -499,8 +501,11 @@
         </div>
 
     </footer>
+    <div class="add-modal"></div>
+
     <script src="./assets/JS/index.js"></script>
     <script src="./assets/JS/carrousel.js"></script>
+    <script src="./assets/JS/products.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>AOS.init();</script>
 </body>

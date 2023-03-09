@@ -16,10 +16,7 @@ const $overlayBackAside = document.querySelector('.overlay-aside')
 var mediaqueryList = window.matchMedia("(max-width: 600px)");
 const $btnAdd = document.querySelector('.add-cart')
 
-
-
 let currentCategory = null
-
 
 let arrayAllProducts = [
        
@@ -499,19 +496,37 @@ const renderProduct = (product) => {
 
 }
 
-
-
-
-
-
-
 const addCart = (e) => {
+    e.stopImmediatePropagation()
+    let x = e.target.dataset.id
+
+
+
     if(e.target.classList.contains('add-cart')){
-       let x = e.target.dataset.id
-       let newProduct = arrayAllProducts.filter(item => item.id == x)
-       saveData(newProduct)
-       loadCart()
-       totalCart()
+        if(contentCart.some(item => item[0].id == x)){
+
+            contentCart = contentCart.map(item => {
+                return item[0].id == x 
+                ? {...item, quantity: Number(item.quantity) + 1} 
+                : item })
+
+            saveToLocalStorage(contentCart)
+            loadCart()
+            totalCart()
+
+            // $modal.classList.add('active-modal')
+
+            // setTimeout(() => {
+            //     $modal.classList.remove('active-modal')
+            // }, 2000);
+            // return
+        }
+
+        let newProduct = arrayAllProducts.filter(item => item.id == x)
+        saveData(newProduct)
+        loadCart()
+        totalCart()
+    
     }
 }
 
@@ -604,13 +619,9 @@ const renderCategory = (category) => {
         lookContainerCards()
         isBtnDisabled()
 
-
-
-    
         $cardsContainer.innerHTML += newArray[0].map(product => {
             return renderProduct(product)}).join('')
             $currentPage.innerText = '1'
-
     }
 }
 
@@ -732,7 +743,6 @@ const renderGeneral = (e) => {
  
 }
 
-
 let pagination = {
     prev: null,
     current: 0,
@@ -764,7 +774,6 @@ const lookContainerCards = () => {
 
 }
 
-
 const seeCategorys = (e) => {
     const $iconForRotate = $seeProducts.lastElementChild
 
@@ -783,7 +792,7 @@ const seeCategorys = (e) => {
 }
 
 const disabledButton = (btn) => {
-    btn.classList.add('disable')
+    btn.classList.add('disabledBtnCart')
 }
 
 const nextPage = (e) => {
@@ -804,8 +813,6 @@ const prevPage = (e) => {
     e.stopImmediatePropagation()
     
     if(pagination.prev == null){ return }
-
-    console.log(pagination)
 
     $currentPage.innerText = pagination.current
 
@@ -868,7 +875,6 @@ const renderAll = (e) => {
 
 const isBtnDisabled = () => {
 
-    console.log(pagination)
     if(pagination.prev == null){
         $prevBtn.classList.add('disabledBtn')
     } else {
@@ -889,7 +895,6 @@ const overlayAsideOut = (e) => {
     $containerCategorys.classList.remove('displayBlock')
 }
 
-
 const initProducts = () => {
     isBtnDisabled()
     $asideProducts.addEventListener('click', visibilityNextElement)
@@ -902,9 +907,14 @@ const initProducts = () => {
     $overlayBackAside.addEventListener('click', overlayAsideOut)
     window.addEventListener('resize', () => {
         var min600 = window.matchMedia("(min-width: 600px)");
+        var max600 = window.matchMedia("(max-width: 600px")
         if(min600.matches){
             $overlayBackAside.classList.remove('displayBlock')
             $containerCategorys.classList.add('displayBlock')
+        }
+        
+        if(max600.matches && $containerCategorys.classList.contains('displayBlock')){
+                $overlayBackAside.classList.add('displayBlock')
         }
 
     })

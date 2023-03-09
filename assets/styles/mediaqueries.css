@@ -112,7 +112,7 @@
         display: block;
     }
 
-    .search-input {
+    .form-search {
         width: 220px!important;
     }
 
@@ -154,11 +154,11 @@
 
     
 
-    .label-search {
+    .form-search {
         display: block;
     }
 
-    .search-input {
+    .form-search {
         display: none;
     }
 
