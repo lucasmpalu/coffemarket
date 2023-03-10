@@ -25,10 +25,10 @@ body {
     padding-bottom: 3rem;
 }
 
-.main-products h1 {
+.tittle-searched-products {
   font-size: 3rem;
   font-weight: 500;
- visibility: hidden;
+    display: none;
 }
 
 

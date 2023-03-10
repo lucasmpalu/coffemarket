@@ -555,8 +555,8 @@ const clearProducts = () => {
 }
 
 const renderSubcategory = (subcategory) => { 
-       $tittleDisabled.classList.add('displayBlock')
-       $containerButtonPages.style.visibility = 'visible'
+    $tittleDisabled.classList.add('displayBlock')
+    $containerButtonPages.style.visibility = 'visible'
        isBtnDisabled()
        overlayAsideOut()
 
@@ -585,7 +585,7 @@ const renderSubcategory = (subcategory) => {
 }
 
 const renderCategory = (category) => {
-    $tittleDisabled.classList.add('displayBlock')    
+    $tittleDisabled.classList.add('displayBlock')
     $containerButtonPages.style.visibility = 'visible'
     isBtnDisabled()
     overlayAsideOut()
