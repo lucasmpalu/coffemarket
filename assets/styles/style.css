@@ -172,6 +172,7 @@ margin: 0;
     color: var(--letters-white);
     border: none;
     margin: 0 1rem;
+    
 }
 .form-search div {
     height: 100%;
@@ -618,6 +619,7 @@ input {
     border: none;
     border-bottom: 2px solid var(--background);
     background-color: transparent;
+    font-size: 1rem;
 }
 
 .textarea {
@@ -720,17 +722,19 @@ footer p {
 }
 
 .add-modal {
-  padding: 15px 0px;
+  padding: 25px 0px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-white);
+  color: var(--letters-white);
+  font-size: 1.4rem;
   background-color: green;
   position: fixed;
   bottom: 0;
   width: 100%;
   transition: all 0.5s ease-out;
   transform: translateY(200%);
+  z-index: 300;
 }
 
 .active-modal {
@@ -743,4 +747,14 @@ footer p {
     color: black;
     border: 1px solid black;
     cursor: not-allowed!important;
+}
+
+.errorInputJS {
+    border:1px solid red;
+    margin: 0;
+}
+
+.error-input {
+    color: red;
+    font-size: 12px;
 }

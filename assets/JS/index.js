@@ -12,7 +12,10 @@ const $totalCart = document.querySelector('.total')
 const $formSearch = document.querySelector('.form-search')
 const $inputSearch = document.querySelector('.input-search')
 const $btnSearch = document.querySelector('.btn-search')
-// const $modal = document.querySelector('.add-modal')
+const $modalAdd = document.querySelector('.add-modal')
+const $btnAdd = document.querySelector('.add-cart')
+
+
 
 let contentCart = JSON.parse(localStorage.getItem('products')) || []//ACÁ VOY A TRAER TODA MI AGENDA
 
@@ -95,6 +98,7 @@ const renderCartProducts = (product) => {
 }
 
 const renderCart = (arr) => {
+    $productsContainer.innerHTML = `` //SI NO HAGO ESTO, EL CARRITO VA A SUMAR A LOS QUE ESTABAN ANTES, ES DECIR, SI UNA CAFETERA YA LA TENGO, VA A APARECER CAFETERA - CANTIDAD 1 Y DESPUÉS DEVUELTA CAFETERA - CANTIDAD 2, VOY A TENER DOS VECES LA MISMA CARD
 
     $productsContainer.innerHTML += arr.map(item => renderCartProducts(item)).join('')
 
@@ -148,6 +152,7 @@ const filterInput = (value) => {
 
 const searchProducts = (e) => {
     e.preventDefault()
+    console.log('eeee')
 
 
     let valueInput = $inputSearch.value
@@ -159,7 +164,6 @@ const searchProducts = (e) => {
     pagination.total = newArray.length
     currentCategory = newArray
     isBtnDisabled() //ESTA FUNCIÓN LA PONGO ACÁ, PORQUE ARRIBA DE ESTO ACTUALICÉ LOS CODIGOS DE LA PAGINACIÓN
-
     $currentPage.innerText = '1'
     $cardsContainer.innerHTML += newArray[0].map( product => { return renderProduct(product)}).join('')//muestro
     // location.href = 'productos.html'
@@ -187,6 +191,7 @@ const init = () => {
     document.addEventListener('DOMContentLoaded', totalCart)
     $btnClear.addEventListener('click', clearCart)
     $formSearch.addEventListener('submit', searchProducts)
+
 
 }
 

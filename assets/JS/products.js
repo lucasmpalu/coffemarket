@@ -14,7 +14,6 @@ const $mainProducts = document.querySelector('.main-products')
 const $tittleDisabled = document.querySelector('.tittle-searched-products')
 const $overlayBackAside = document.querySelector('.overlay-aside')
 var mediaqueryList = window.matchMedia("(max-width: 600px)");
-const $btnAdd = document.querySelector('.add-cart')
 const $modalProducts = document.getElementsByClassName('add-modal')
 
 let currentCategory = null
@@ -511,17 +510,30 @@ const addCart = (e) => {
                 return item[0].id == x 
                 ? {...item, quantity: Number(item.quantity) + 1} 
                 : item })
-
+            
             saveToLocalStorage(contentCart)
             loadCart()
             totalCart()
+            $modalAdd.innerText = 'Producto añadido con éxito al carrito'
+            $modalAdd.classList.add('active-modal')
+            setTimeout(() => {
+                $modalAdd.classList.remove('active-modal')
+            $modalAdd.innerText = ''
+            }, 2000);
             return
         }
         //SI NO EXISTE EN EL CARRITO, EJECUTO ESTO Y LO AGREGO
         let newProduct = arrayAllProducts.filter(item => item.id == x)
+        $cart
         saveData(newProduct)
         loadCart()
         totalCart()
+        $modalAdd.innerText = 'Producto añadido con éxito al carrito'
+        $modalAdd.classList.add('active-modal')
+        setTimeout(() => {
+            $modalAdd.classList.remove('active-modal')
+        $modalAdd.innerText = ''
+        }, 2000);
     
     }
 }
