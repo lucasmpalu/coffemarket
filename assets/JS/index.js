@@ -152,21 +152,26 @@ const filterInput = (value) => {
 
 const searchProducts = (e) => {
     e.preventDefault()
-    console.log('eeee')
-
 
     let valueInput = $inputSearch.value
     let newArray = dividedArray( filterInput(valueInput), 6 ) //DIVIDO EL ARRAY, DE 6 EN 6, PARA LA PAGINACIÓN
-   
+    
+    if(filterInput(valueInput) > 0){
     clearProducts()  //LIMPIO EL CONTENEDOR DE LAS CARDS, SI HAY OTROS PRODUCTOS RENDERIZADOS
     $containerButtonPages.style.visibility = 'visible' //HAGO APARECER LOS BOTONES QUE ESTÁN HIDDEN (EL CONTANEDOR DE LOS BTN)
-    $tittleDisabled.style.visibility = 'visible' //HAGO APARECER EL TITULO DE OBJETOS ENCONTRADOS QUE ESTÁ HIDDEN
+    $tittleDisabled.classList.add('displayBlock') //HAGO APARECER EL TITULO DE OBJETOS ENCONTRADOS 
     pagination.total = newArray.length
     currentCategory = newArray
     isBtnDisabled() //ESTA FUNCIÓN LA PONGO ACÁ, PORQUE ARRIBA DE ESTO ACTUALICÉ LOS CODIGOS DE LA PAGINACIÓN
     $currentPage.innerText = '1'
     $cardsContainer.innerHTML += newArray[0].map( product => { return renderProduct(product)}).join('')//muestro
+    $formSearch.reset()
     // location.href = 'productos.html'
+    }else {
+        $tittleDisabled.classList.add('displayBlock')
+        $containerButtonPages.style.visibility = 'hidden'
+        $cardsContainer.innerText = 'No encontramos ningún resultado para tu busqueda🙁'
+    }
 
     }
     

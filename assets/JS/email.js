@@ -92,6 +92,7 @@ const sendMessage = (e) => {
     
     if( isValidEmail && isValidMessage && isValidName){
         window.location.href = `mailto:lucasmpalu@gmail.com?subject=${$message.value}&body=${$name.value}`;
+        $formMessage.reset()
         return
     }
 
