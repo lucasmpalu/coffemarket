@@ -85,13 +85,13 @@ header {
     flex-direction: column;
     justify-content: center;
     position: sticky;
-    top: 0;
     background-color: var(--background);
     color: var(--letters-white);
     height: 20vh;
     width: 100%;
+    z-index: 60;
     border-bottom: 1px solid var(--background);
-    position: relative;
+    /* position: relative; */
     
 }
 
@@ -233,6 +233,7 @@ display: none;
 
 .burger-menu{
     display: none;
+ 
 }
 
 .close-menu {
@@ -309,7 +310,7 @@ a {
     flex-direction: column;
     gap: 30px;
     overflow-y: scroll;
-    z-index: 1000;
+    z-index: 1500!important;
     transform: translate(0%);
     animation: slide-left 1.3s cubic-bezier(0.075, 0.82, 0.165, 1);
     transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
@@ -738,7 +739,7 @@ footer p {
 }
 
 .active-modal {
-  transform: translateY(0);
+  transform: translateY(0%);
   transition: all 0.5s ease-in;
 }
 

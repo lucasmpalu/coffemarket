@@ -514,7 +514,7 @@ const addCart = (e) => {
             saveToLocalStorage(contentCart)
             loadCart()
             totalCart()
-            $modalAdd.innerText = 'Producto añadido con éxito al carrito'
+            $modalAdd.innerText = 'El producto ha sido agregado al carrito'
             $modalAdd.classList.add('active-modal')
             setTimeout(() => {
                 $modalAdd.classList.remove('active-modal')
@@ -528,7 +528,7 @@ const addCart = (e) => {
         saveData(newProduct)
         loadCart()
         totalCart()
-        $modalAdd.innerText = 'Producto añadido con éxito al carrito'
+        $modalAdd.innerText = 'El producto ha sido agregado al carrito'
         $modalAdd.classList.add('active-modal')
         setTimeout(() => {
             $modalAdd.classList.remove('active-modal')

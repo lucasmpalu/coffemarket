@@ -170,6 +170,7 @@ const searchProducts = (e) => {
     }else {
         $tittleDisabled.classList.add('displayBlock')
         $containerButtonPages.style.visibility = 'hidden'
+        $formSearch.reset()
         $cardsContainer.innerText = 'No encontramos ningún resultado para tu busqueda🙁'
     }
 
