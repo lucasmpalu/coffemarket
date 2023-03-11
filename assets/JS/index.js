@@ -202,10 +202,10 @@ const searchProducts = (e) => {
     const moreLessProducts = (e) => {
 
         if(e.target.classList.contains('up')){
-            let product = e.target.dataset.id
+            let idProduct = e.target.dataset.id
 
             contentCart = contentCart.map(item => {
-                return item[0].id == product 
+                return item[0].id == idProduct 
                 ? {...item, quantity: Number(item.quantity) + 1} 
                 : item })
 
@@ -229,8 +229,17 @@ const searchProducts = (e) => {
                     totalCart()
                     $numberCart.innerText = contentCart.length
                     return
-                }
-            }
+            }}
+
+            contentCart = contentCart.map(item => {
+                return item[0].id == idProduct 
+                ? {...item, quantity: Number(item.quantity) - 1} 
+                : item })
+
+            saveToLocalStorage(contentCart)
+            loadCart()
+            totalCart()
+            return
         }     
     }
     
