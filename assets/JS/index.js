@@ -14,6 +14,7 @@ const $inputSearch = document.querySelector('.input-search')
 const $btnSearch = document.querySelector('.btn-search')
 const $modalAdd = document.querySelector('.add-modal')
 const $btnAdd = document.querySelector('.add-cart')
+const $numberCart = document.querySelector('.label-cart__numbers')
 
 
 
@@ -110,12 +111,14 @@ const loadCart = () => {
         $productsContainer.innerText = 'Su carrito está vacío.'
         $btnClear.classList.add('disabledBtnCart')
         $btnBuy.classList.add('disabledBtnCart')
+        $numberCart.innerText = contentCart.length
         return
     }
 
     $btnClear.classList.remove('disabledBtnCart')
     $btnBuy.classList.remove('disabledBtnCart')
     renderCart(contentCart)
+    $numberCart.innerText = contentCart.length
 
 }
 
@@ -127,6 +130,7 @@ const clearCart = () => {
             saveToLocalStorage(contentCart)
             loadCart()
             totalCart()
+            $numberCart.innerText = contentCart.length
         }
     }
   
@@ -176,6 +180,7 @@ const searchProducts = (e) => {
 
     }
 
+
     const buyConfirm = (e) => {
         if(contentCart.length){
             if(window.confirm('Desea confirmar la compra?')){
@@ -222,6 +227,7 @@ const searchProducts = (e) => {
                     saveToLocalStorage(contentCart)
                     loadCart()
                     totalCart()
+                    $numberCart.innerText = contentCart.length
                     return
                 }
             }

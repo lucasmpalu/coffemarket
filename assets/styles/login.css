@@ -27,8 +27,9 @@ header {
 }
 
 .nav-bar {
-    display: flex;
+    display: flex!important;
     align-items: center;
+    justify-content: flex-start;
     border: none!important;
 }
 

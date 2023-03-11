@@ -165,6 +165,10 @@
     .nav-bar__ul {
         display: none;
     }
+    
+    .ul__login {
+        display: flex;
+    }
 
     .header-bottom .container {
         justify-content: flex-start;
