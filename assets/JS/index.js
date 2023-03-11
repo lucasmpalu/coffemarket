@@ -198,7 +198,6 @@ const searchProducts = (e) => {
 
         if(e.target.classList.contains('up')){
             let product = e.target.dataset.id
-            console.log(product)
 
             contentCart = contentCart.map(item => {
                 return item[0].id == product 
@@ -209,32 +208,24 @@ const searchProducts = (e) => {
             loadCart()
             totalCart()
             return
-            
-
+    
         }
          
         if(e.target.classList.contains('down')){
-            
             let idProduct = e.target.dataset.id
             let product = contentCart.filter(item => item[0].id == idProduct)
             
-            if(product[0].quantity == 1 && window.confirm('Desea eliminar el producto?')){
-                contentCart = contentCart.filter(item => item[0].id != idProduct)
-                saveToLocalStorage(contentCart)
-                loadCart()
-                totalCart()
-                return
+            if(product[0].quantity == 1){
+                if(window.confirm('Desea eliminar el producto?')){
+                    contentCart = contentCart.filter(item =>item[0].id != idProduct)
+                    
+                    saveToLocalStorage(contentCart)
+                    loadCart()
+                    totalCart()
+                    return
+                }
             }
-
-            contentCart = contentCart.map(item => {
-                return item[0].id == idProduct 
-                ? {...item, quantity: Number(item.quantity) - 1} 
-                : item })
-
-            saveToLocalStorage(contentCart)
-            loadCart()
-            totalCart()
-        }
+        }     
     }
     
 

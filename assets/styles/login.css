@@ -18,6 +18,7 @@ section {
 header {
     position: absolute;
     background-color: transparent!important;
+    background: transparent!important;
     border: none;
     display: flex;
     padding: 1rem;
