@@ -8,6 +8,10 @@
 
 }
 
+header {
+    position: relative;
+    width: 100%;
+}
 
 body {
     position: relative
@@ -57,6 +61,7 @@ aside h3 {
     position: relative;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     z-index: 90;
+    background-color: var(--letters-white);
 
 }
 
@@ -127,7 +132,8 @@ ASIDE-TITTLE__CATEGORY - RIGHT
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1rem;
+    padding: 1rem;
+    width: 100%;
     cursor: pointer;
 }
 

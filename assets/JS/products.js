@@ -923,6 +923,8 @@ const initProducts = () => {
         }
 
     })
+    $btnBuy.addEventListener('click', buyConfirm)
+
 
 }
 

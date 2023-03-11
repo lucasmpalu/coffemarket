@@ -137,7 +137,7 @@ const clearCart = () => {
 
 const totalCart = () => {
     
-    let x = contentCart.reduce((acc, curr) => acc + curr[0].price, 0)
+    let x = contentCart.reduce((acc, curr) => acc + curr[0].price * curr.quantity, 0)
 
     $totalCart.innerText = `$ ${x}`
 
@@ -175,6 +175,67 @@ const searchProducts = (e) => {
     }
 
     }
+
+    const buyConfirm = (e) => {
+        if(contentCart.length){
+            if(window.confirm('Desea confirmar la compra?')){
+                contentCart = []
+                saveToLocalStorage(contentCart)
+                loadCart()
+                loadCart()
+                $modalAdd.classList.add('active-modal')
+                $modalAdd.innerHTML = '<p>Muchas gracias por su compra</p>'
+                setTimeout(() => {
+                    $modalAdd.classList.remove('active-modal')
+                    $modalAdd.innerHTML = ''
+                }, 2000);
+            }
+
+        }
+    }
+
+    const moreLessProducts = (e) => {
+
+        if(e.target.classList.contains('up')){
+            let product = e.target.dataset.id
+            console.log(product)
+
+            contentCart = contentCart.map(item => {
+                return item[0].id == product 
+                ? {...item, quantity: Number(item.quantity) + 1} 
+                : item })
+
+            saveToLocalStorage(contentCart)
+            loadCart()
+            totalCart()
+            return
+            
+
+        }
+         
+        if(e.target.classList.contains('down')){
+            
+            let idProduct = e.target.dataset.id
+            let product = contentCart.filter(item => item[0].id == idProduct)
+            
+            if(product[0].quantity == 1 && window.confirm('Desea eliminar el producto?')){
+                contentCart = contentCart.filter(item => item[0].id != idProduct)
+                saveToLocalStorage(contentCart)
+                loadCart()
+                totalCart()
+                return
+            }
+
+            contentCart = contentCart.map(item => {
+                return item[0].id == idProduct 
+                ? {...item, quantity: Number(item.quantity) - 1} 
+                : item })
+
+            saveToLocalStorage(contentCart)
+            loadCart()
+            totalCart()
+        }
+    }
     
 
 const init = () => {
@@ -197,6 +258,8 @@ const init = () => {
     document.addEventListener('DOMContentLoaded', totalCart)
     $btnClear.addEventListener('click', clearCart)
     $formSearch.addEventListener('submit', searchProducts)
+    $btnBuy.addEventListener('click', buyConfirm)
+    $cart.addEventListener('click', moreLessProducts)
 
 
 }
