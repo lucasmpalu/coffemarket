@@ -11,12 +11,14 @@ const $currentPage = document.querySelector('.current-page')
 const $seeProducts = document.querySelector('.div-tittle-aside')
 const $containerCategorys = document.querySelector('.container-categorys')
 const $mainProducts = document.querySelector('.main-products')
-const $tittleDisabled = document.querySelector('.tittle-searched-products')
 const $overlayBackAside = document.querySelector('.overlay-aside')
 var mediaqueryList = window.matchMedia("(max-width: 600px)");
 const $modalProducts = document.getElementsByClassName('add-modal')
+const $tittleDisabled = document.querySelector('.tittle-searched-products')
 
 let currentCategory = null
+
+
 
 let arrayAllProducts = [
        
@@ -538,17 +540,6 @@ const addCart = (e) => {
     }
 }
 
-const dividedArray = (arr, pages) => {
-
-    let chunk = []
-
-    for(let i = 0; i < arr.length; i += pages){
-        chunk.push(arr.slice(i, i + pages))
-    }
-
-    return chunk
-
-}
 
 const clearProducts = () => {
     $cardsContainer.innerHTML = ''

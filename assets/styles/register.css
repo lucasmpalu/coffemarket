@@ -1,0 +1,179 @@
+#form-register div {
+    width: 80%;
+    min-height: 55px;
+
+}
+
+
+
+#section-register {
+    height: 100vh;
+    position: relative;
+}
+
+#section-register .container-register  {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+#section-register .container {
+    height: 90%!important;
+    width: 100%;
+}
+
+
+.errorJS {
+    color: red;
+    font-size: 12px;
+}
+
+.errorInputJS {
+    border: 0.1px solid red!important;
+}
+
+.noneJS {
+display: none;
+}
+
+
+/*  */
+
+
+.container-register {
+    width: 50%;
+    height: 500px;
+    max-height: max-content;
+    border-radius: 5px;
+    background-color: #fafafa8a;
+    box-shadow:  0 10px 10px -4px;
+    padding: 0!important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
+
+.form-right {
+    background-color: rgba(13, 13, 13, 0.592);
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px 5px 5px 0px;
+    position: relative;
+}
+
+
+#form-register {
+    height: 100%;
+    width:70%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 0.65rem;
+    position: relative;
+}
+
+#form-register:active {
+    background-color: transparent;
+
+}
+
+.form-right img {
+    /* width: 100%!important; */
+    width: 90%!important;
+}
+
+
+#form-register button {
+    width: 80%;
+
+}
+
+#form-register {
+    background-color: ;
+}
+
+#form-register:focus {
+    background-color: transparent;
+}
+
+.form-contact a {
+    color: var(--background)!important;
+    font-weight: 300;
+}
+
+.forgot-password {
+
+    align-self: self-end;
+
+}
+
+.register {
+    font-weight: 500!important;
+}
+
+.form-contact p {
+    font-weight: 200;
+}
+
+
+.container-register h3 {
+    /* color: var(--letters-orange); */
+    font-size: 2.5rem;
+    font-weight: 100;
+
+}
+
+/* JS */
+
+.alert-confirm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    height: 30%;
+    width: 40%;
+    position: absolute;
+    background-color: var(--letters-white);
+    z-index: 1000;
+    border-radius: 5px;
+    box-shadow:  0 10px 10px -4px;
+    gap: 1rem;
+    text-align: center;
+    transition: all 1s;
+}
+
+.alert-confirm img {
+transform: scale(1.2);
+animation: zoom 1.7s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.alert-confirm h3 {
+    animation:zoom 1.7s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+@keyframes zoom {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    25% {
+        opacity: 0.75;
+    }
+    
+}
+
+.alert-confirm h3 {
+    font-size: 1.4rem;
+}
+

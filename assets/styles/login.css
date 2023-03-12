@@ -5,7 +5,7 @@ body {
 section {
     background-color: var(--letters-white);
     width: 100%;
-    min-height: 100vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,32 +15,7 @@ section {
 }
 
 
-header {
-    position: absolute;
-    background-color: transparent!important;
-    background: transparent!important;
-    border: none;
-    display: flex;
-    padding: 1rem;
-    justify-content: flex-start;
 
-}
-
-.nav-bar {
-    display: flex!important;
-    align-items: center;
-    justify-content: flex-start;
-    border: none!important;
-}
-
-.back-home {
-    color: var(--letters-white);
-
-}
-
-header img {
-    height: 24px;
-}
 
 .container-login {
     width: 50%;
@@ -82,6 +57,10 @@ header img {
     margin-bottom: 1rem;
 }
 
+.form-contact div {
+    width: 90%;
+}
+
 .form-top img {
     /* width: 80%; */
     height: 100%;
@@ -93,7 +72,7 @@ header img {
     min-height: 3rem;
 }
 
-.form-contact a {
+.form-contct a {
     color: var(--background)!important;
     font-weight: 300;
 }

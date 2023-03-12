@@ -4,25 +4,27 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login - Rosario Coffe Market</title>
+        <title>Registro - Rosario Coffe Market</title>
         <link rel="stylesheet" href="./assets/styles/style.css">
         <link rel="stylesheet" href="./assets/styles/animation.css">
         <link rel="stylesheet" href="./assets/styles/cards.css">
+        <link rel="stylesheet" href="./assets/styles/register.css">
         <link rel="stylesheet" href="./assets/styles/mediaqueries.css">
         <link rel="stylesheet" href="./assets/styles/login.css">
-        <link rel="stylesheet" href="./assets/styles/register.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     </head>
 <body>
+
     <a href="https://wa.me/13413127575?text=Hola!%20Me%20interesar%C3%ADa%20saber%20sobre%20un%20producto">
         <div class="whatsapp-sticky">
-            <img class="no-hover"src="assets/styles/img/hero/whatsapp.png" alt="">
+            <img class="no-hover"src="assets/styles/img/hero/whatsapp.png" alt="logo de whatsapp">
         </div>
     </a>
     <div class="overlay"> </div>
+
     <nav class="burger-menu">
         <ul class="burger-list">
             <li>
@@ -141,32 +143,47 @@
 
     </header>
 <main>
-    <section id="section-login">
+    <section id="section-register">
+        <div class="alert-confirm displayNone">
+            <h4>Tu registro ha sido con éxito</h4>
+            <img src="assets/styles/img/register/img/check.png" alt="Logo check">
+        </div>
         <div class="container">
-        <div class="container-login ">
-            <div class="form-top">
+        <div class="container-register ">
+     
+                <!-- ESTE FORM ESTÁ RECICLADO CON PROPIEDADES DEL INDEX -->
+            <form id="form-register" action="submit">
+
+                <h3>Registrese aquí</h3>
+                <div class="container-name">
+                    <input type="text" id="name-register"  name="name" placeholder="NOMBRE COMPLETO">
+                    <small></small>
+                </div>
+                <div class="container-user">
+                    <input type="text" id="user-register" name="user" placeholder="USUARIO">
+                    <small></small>
+                </div>
+                <div class="container-phone">
+                    <input type="number" id="phone-register" name="phone" placeholder="NUMERO CELULAR">
+                    <small></small>
+                </div>
+                <div class="container-email">
+                    <input type="email" id="email-register" name="email" placeholder="CORREO ELECTRONICO">
+                    <small></small>
+                </div>
+                <div class="container-password">
+                    <input type="password" id="password-register" name="password" placeholder="INGRESE UNA CONTRASEÑA">
+                    <small></small>
+                </div>
+
+                <button id="register-btn">Registrarse</button>
+
+            </form>
+            <div class="form-right">
                 <!-- <img src="assets/header/logo.png" alt="Logo de la empresa"> -->
                 <img src="assets/styles/img/header/logo3.png" alt="">
 
             </div>
-                <!-- ESTE FORM ESTÁ RECICLADO CON PROPIEDADES DEL INDEX -->
-            <form class="form-contact" action="submit">
-
-                <h3>Sign In</h3>
-                <div class="container-user">
-                    <input type="text" id="user-login" name="user" placeholder="USUARIO">
-                    <small></small>
-                </div>
-                <div class="container-password">
-                    <input type="password" id="password-login" name="password" placeholder="CONTRASEÑA">
-                    <small></small>
-                </div>                
-                <a href="" class="forgot-password">¿Olvidaste tu contraseña?</a>
-                
-                <button type="submit">Entrar</button>
-                <p>No tienes cuenta aún?</p>
-                <a class="register" href="register.html">Registrate acá</a>
-            </form>
 
 
 
@@ -191,7 +208,7 @@
     </div>
 
 </footer>
+<script src="./assets/JS/register.js"></script>
 <script src="./assets/JS/index.js"></script>
-<script src="./assets/JS/login.js"></script>
 </body>
 </html>

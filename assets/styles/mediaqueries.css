@@ -77,6 +77,11 @@
     .section-uno__products h1 {
         font-size: 2.5rem;
     }
+
+    .alert-confirm {
+        height: 30%;
+        width: 40%!important;
+    }
 }
 
 @media only screen and (max-width:768px)  { 
@@ -144,6 +149,14 @@
     .container-login {
         width: 70%!important;
     }
+
+    /* register */
+    .alert-confirm {
+        height: 30%;
+        width: 60%!important;
+    }
+
+ 
 
 
 
@@ -371,6 +384,46 @@
         margin-top:
         
     }
+       /* REGISTER */
+
+       #section-register .container-register  {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        height: 100%;
+    } 
+
+        #section-register .form-right {
+            width: 100%;
+            height: 15%;
+            border-radius: 5px 5px 0px 0px;
+        }
+
+        .form-right img {
+           width: 45%!important;
+        }
+
+        #form-register {
+            width: 100%;
+            height: 85%;
+            margin: 0;
+        }
+
+        #form-register input {
+            padding: 0.3rem;
+        }
+
+        #section-register h3 {
+            font-size: 2rem;
+        }
+
+        .alert-confirm {
+            height: 30%;
+            min-width: 80%;
+        }
+
+
+
 }
 
 
@@ -455,6 +508,19 @@
             display: flex;
             border: none!important;
         }
+           /* REGISTER */
+    #section-register .container-login  {
+        display: flex;
+        flex-direction: row-reverse!important;
+        width: 85%!important;
+        height: max-content;
+    }
+
+    .alert-confirm {
+        height: 30%;
+        width: 80%!important;
+    }
+
 }
 
 @media only screen and (max-width:400px) {
@@ -481,6 +547,18 @@
     /* PRODUCTS */
    .tittle-searched-products{
     font-size: 2rem!important;
-
    }
+
+   /* REGISTER */
+   #section-register .container-login  {
+    display: flex;
+    flex-direction: row-reverse!important;
+    width: 80%!important;
+    height: max-content;
+}
+
+.alert-confirm {
+    height: 30%;
+    width: 85%!important;
+}
 }

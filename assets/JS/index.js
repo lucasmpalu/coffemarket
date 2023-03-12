@@ -15,7 +15,26 @@ const $btnSearch = document.querySelector('.btn-search')
 const $modalAdd = document.querySelector('.add-modal')
 const $btnAdd = document.querySelector('.add-cart')
 const $numberCart = document.querySelector('.label-cart__numbers')
+const $iconUserText = document.querySelector('.icon-user-text')
+const $labelLogin = document.querySelector('.label-login')
+const $btnGoShop = document.querySelector('.btn-goshop')
+const $btnGoLogin = document.querySelector('.btn-goLogin')
 
+
+let usersLogin = JSON.parse(localStorage.getItem('users')) || [] //ACÁ VOY A TRAER TODA MI AGENDA
+let currentUser = JSON.parse(localStorage.getItem('currentSession')) || []
+
+const dividedArray = (arr, pages) => {
+
+    let chunk = []
+
+    for(let i = 0; i < arr.length; i += pages){
+        chunk.push(arr.slice(i, i + pages))
+    }
+
+    return chunk
+
+}
 
 
 let contentCart = JSON.parse(localStorage.getItem('products')) || []//ACÁ VOY A TRAER TODA MI AGENDA
@@ -35,7 +54,6 @@ const saveToLocalStorage = (array) => {
 const closeCart = (e) => {
 
     if(e.target.classList.contains('close-cart')){
-        console.log(e.target)
         $cart.classList.remove('displayBlock')
         $overlay.classList.remove('displayBlock')
 
@@ -154,13 +172,16 @@ const filterInput = (value) => {
     })   
 }
 
+
+
 const searchProducts = (e) => {
     e.preventDefault()
 
     let valueInput = $inputSearch.value
     let newArray = dividedArray( filterInput(valueInput), 6 ) //DIVIDO EL ARRAY, DE 6 EN 6, PARA LA PAGINACIÓN
-    
-    if(filterInput(valueInput) > 0){
+    // location.href = 'productos.html'
+
+    if(filterInput(valueInput).length > 0){
     clearProducts()  //LIMPIO EL CONTENEDOR DE LAS CARDS, SI HAY OTROS PRODUCTOS RENDERIZADOS
     $containerButtonPages.style.visibility = 'visible' //HAGO APARECER LOS BOTONES QUE ESTÁN HIDDEN (EL CONTANEDOR DE LOS BTN)
     $tittleDisabled.classList.add('displayBlock') //HAGO APARECER EL TITULO DE OBJETOS ENCONTRADOS 
@@ -170,7 +191,6 @@ const searchProducts = (e) => {
     $currentPage.innerText = '1'
     $cardsContainer.innerHTML += newArray[0].map( product => { return renderProduct(product)}).join('')//muestro
     $formSearch.reset()
-    // location.href = 'productos.html'
     }else {
         $tittleDisabled.classList.add('displayBlock')
         $containerButtonPages.style.visibility = 'hidden'
@@ -242,6 +262,52 @@ const searchProducts = (e) => {
             return
         }     
     }
+
+    
+
+
+
+
+
+    const loadSession = () => {
+        if(!currentUser.length){
+            $iconUserText.textContent = 'Login'
+            return
+        }
+
+        $iconUserText.textContent = currentUser
+
+    }
+
+    const closeOpenSession = () => {
+        console.log(currentUser)
+        if(!currentUser.length || currentUser == null){
+            location.href = 'login.html'
+            return
+        }
+
+        if(window.confirm('Desea cerrar sesión?')){
+            currentUser = []
+            localStorage.setItem('currentSession', JSON.stringify(currentUser))
+            location.href = 'index.html'
+            return
+        }
+        
+
+
+    }
+
+    const goProducts = () => {
+        setTimeout(() => {
+            location.href = 'productos.html'
+        }, 150);
+    }
+
+    const goLogin = () => {
+        setTimeout(() => {
+            location.href = 'login.html'
+        }, 150);
+    }
     
 
 const init = () => {
@@ -266,8 +332,10 @@ const init = () => {
     $formSearch.addEventListener('submit', searchProducts)
     $btnBuy.addEventListener('click', buyConfirm)
     $cart.addEventListener('click', moreLessProducts)
-
-
+    window.addEventListener('DOMContentLoaded', loadSession)
+    $labelLogin.addEventListener('click', closeOpenSession)
+    $btnGoShop.addEventListener('click', goProducts)
+    $btnGoLogin.addEventListener('click', goLogin)
 }
 
 init()
