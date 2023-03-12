@@ -388,9 +388,10 @@ a {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 1rem 1rem;
+    padding: 0rem 1rem;
     max-height: 45vh;
     overflow-y: scroll;
+    margin: 1rem 0;
   }
 
   .cart-total {
