@@ -1,7 +1,6 @@
 const $categoryAside = document.querySelectorAll('.category-aside')
 const $asideProducts = document.querySelector('.aside-products')
 const $arrowRightAside = document.querySelector('.right')
-const $cardsContainer = document.querySelector('.cards-container')
 const $itemSubcategory = document.querySelector('.li-subcategory')
 const $listAside = document.querySelectorAll('list-aside')
 const $containerButtonPages = document.querySelector('.container-buttons__pag')
@@ -15,6 +14,7 @@ const $overlayBackAside = document.querySelector('.overlay-aside')
 var mediaqueryList = window.matchMedia("(max-width: 600px)");
 const $modalProducts = document.getElementsByClassName('add-modal')
 const $tittleDisabled = document.querySelector('.tittle-searched-products')
+const $cardsContainer = document.querySelector('.cards-container')
 
 let currentCategory = null
 
@@ -541,9 +541,7 @@ const addCart = (e) => {
 }
 
 
-const clearProducts = () => {
-    $cardsContainer.innerHTML = ''
-}
+
 
 const renderSubcategory = (subcategory) => { 
     $tittleDisabled.classList.add('displayBlock')

@@ -10,6 +10,20 @@
     
 }
 
+.hero-left {
+    animation: slide-right 1.7s cubic-bezier(0.075, 0.82, 0.165, 1) 1;
+    transform: translateX(0);
+}
+
+@keyframes slide-right {
+
+    0%{
+        transform: translateX(-150%);
+    }
+    
+}
+
+
 
 .nav-bar__ul li:after {
     content: '';
@@ -45,7 +59,7 @@
 
 @keyframes blink {
     50% {
-        border-color: transparent;
+        border-color: var(--letters-orange);
         color: var(--letters-orange);
         /* border-right: 2px solid var(--letters-orange); */
     }
@@ -129,10 +143,10 @@ aside li:hover {
 }
 
 .overlay {
-    position: fixed;
+    position: absolute;
     top: 0px;
     left: 0;
-    /* min-height: 100vh; */
+    min-height: 100vh;
     height: 100%!important;
     width: 100%;
     z-index: 100; /*Para que quede por encima del resto de las cosas*/
@@ -146,10 +160,10 @@ aside li:hover {
   }
 
 .overlay-aside {
-    position: fixed;
+    position: absolute;
     top: 0px;
     left: 0;
-    /* min-height: 100vh; */
+    min-height: 100vh;
     height: 100%!important;
     width: 100%;
     z-index: 50; /*Para que quede por encima del resto de las cosas*/
@@ -159,9 +173,4 @@ aside li:hover {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     display: none;
-}
-
-.quantity-handler:hover {
-    background-color: var(--letters-orange);
-    cursor: pointer;
 }

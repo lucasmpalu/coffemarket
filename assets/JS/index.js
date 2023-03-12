@@ -21,6 +21,7 @@ const $btnGoShop = document.querySelector('.btn-goshop')
 const $btnGoLogin = document.querySelector('.btn-goLogin')
 
 
+
 let usersLogin = JSON.parse(localStorage.getItem('users')) || [] //ACÁ VOY A TRAER TODA MI AGENDA
 let currentUser = JSON.parse(localStorage.getItem('currentSession')) || []
 
@@ -173,14 +174,16 @@ const filterInput = (value) => {
 }
 
 
+const clearProducts = () => {
+    $cardsContainer.innerHTML = ''
+}
 
 const searchProducts = (e) => {
     e.preventDefault()
 
     let valueInput = $inputSearch.value
     let newArray = dividedArray( filterInput(valueInput), 6 ) //DIVIDO EL ARRAY, DE 6 EN 6, PARA LA PAGINACIÓN
-    // location.href = 'productos.html'
-
+    
     if(filterInput(valueInput).length > 0){
     clearProducts()  //LIMPIO EL CONTENEDOR DE LAS CARDS, SI HAY OTROS PRODUCTOS RENDERIZADOS
     $containerButtonPages.style.visibility = 'visible' //HAGO APARECER LOS BOTONES QUE ESTÁN HIDDEN (EL CONTANEDOR DE LOS BTN)
