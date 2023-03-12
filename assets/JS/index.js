@@ -210,7 +210,7 @@ const searchProducts = (e) => {
                 contentCart = []
                 saveToLocalStorage(contentCart)
                 loadCart()
-                loadCart()
+                totalCart()
                 $modalAdd.classList.add('active-modal')
                 $modalAdd.innerHTML = '<p>Muchas gracias por su compra</p>'
                 setTimeout(() => {
