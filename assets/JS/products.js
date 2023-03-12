@@ -913,6 +913,10 @@ const initProducts = () => {
 
     })
     $btnBuy.addEventListener('click', buyConfirm)
+    window.addEventListener('DOMContentLoaded', () => {
+        currentCategory = 'Todos'
+        renderCategory(currentCategory)
+    })
 
 
 }
