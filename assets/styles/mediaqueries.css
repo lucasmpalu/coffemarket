@@ -451,6 +451,9 @@
             height: 30%;
             min-width: 80%;
         }
+        .container-labels {
+            transform: scale(0.85);
+        }
 
 
 
@@ -465,12 +468,12 @@
     }
 
     .container {
-        max-width: 370px!important;
+        max-width: 365px!important;
         justify-content: flex-start;
     }
 
     .container-labels {
-        transform: scale(0.9);
+        transform: scale(0.85);
     }
 
     #hero img{
@@ -555,7 +558,7 @@
 
 @media only screen and (max-width:400px) {
     .container {
-        max-width: 310px!important;
+        max-width: 325px!important;
     }
 
     #section-three .container {
