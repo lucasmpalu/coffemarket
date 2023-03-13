@@ -227,21 +227,29 @@ transition: all 1s;
 
 .label-login{
     border-radius: 100%;
-    padding: 0;
+    padding:  0.15rem 0rem 0.15rem 0.3rem;
     display: flex;
-    flex-direction: column;
+    background-color: rgba(37, 32, 32, 0.923);
+    border-radius: 30px;
     align-items: center;
     justify-content: center;
     transform: scale(1.1);
     position: relative;
-    top: 0.7rem;
+    top: 0.2rem;
+    background-color: ;
 }
 
 .label-login p {
     color: #fafafa;
-    font-size: 13px;
+    font-size: 10px;
 }
+.label-login img {
+    background-color: rgba(91, 87, 87, 0.642);
+    border-radius:100%;
+    transform: scale(0.75);
+    padding: 0.2rem;
 
+}
 
 .label-menu {
 display: none;
