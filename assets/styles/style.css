@@ -683,6 +683,7 @@ input {
     border-bottom: 2px solid var(--background);
     font-family: 'Outfit', sans-serif!important;
     background-color: transparent;
+    resize: none;
 }
 
 .section-four__left{
