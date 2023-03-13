@@ -2,6 +2,8 @@
 const $formLogin = document.querySelector('.form-contact')
 const $userLogin = document.querySelector('#user-login')
 const $passwordLogin = document.querySelector('#password-login')
+const $alertSuccessLogin = document.querySelector('.alert-confirm')
+
 
 const showError = (input , message) => {
     const parentInput = input.parentElement
@@ -70,9 +72,10 @@ const loginFn = (e) => {
     showSuccess($passwordLogin)
     currentUser = localStorage.setItem('currentSession', JSON.stringify(valueUser))
 
+    $alertSuccessLogin.classList.remove('displayNone')
     setTimeout(() => {
         location.href = 'index.html'
-    }, 1500);
+    }, 2500);
 
 }
 

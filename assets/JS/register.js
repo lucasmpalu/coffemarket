@@ -5,7 +5,7 @@ const $email = document.getElementById('email-register')
 const $password = document.getElementById('password-register')
 const $phone = document.getElementById('phone-register')
 const $registerBtn = document.querySelector('#register-btn')
-const $alertSuccess = document.querySelector('.alert-confirm')
+const $alertSuccessRegister = document.querySelector('.alert-confirm')
 
 let userLocalStorage = JSON.parse(localStorage.getItem('users')) || [] //ACÁ VOY A TRAER TODA MI AGENDA
 
@@ -276,7 +276,7 @@ const registerFn = (e) => {
         }, 1000);
         
 
-        $alertSuccess.classList.remove('displayNone')
+        $alertSuccessRegister.classList.remove('displayNone')
         setTimeout(() => {
             location.href = 'login.html'
         }, 2500);
