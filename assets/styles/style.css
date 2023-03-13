@@ -227,12 +227,13 @@ transition: all 1s;
 
 .label-login{
     border-radius: 100%;
-    padding:  0.15rem 0rem 0.15rem 0.3rem;
+    padding:  0.1rem 0rem 0.1rem 0.5rem;
+    min-width: 70px;
     display: flex;
     background-color: rgba(37, 32, 32, 0.923);
     border-radius: 30px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     transform: scale(1.1);
     position: relative;
     top: 0.2rem;
