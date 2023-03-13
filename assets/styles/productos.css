@@ -215,9 +215,3 @@ cursor: pointer;
     display: block!important;
 }
 
-footer {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-}
