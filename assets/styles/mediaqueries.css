@@ -127,7 +127,7 @@
     }
 
     .form-search {
-        width: 200px!important;
+        width: 20px!important;
     }
 
     .container {
@@ -172,26 +172,14 @@
         height: 30%;
         width: 60%!important;
     }
-
- 
-
-
-
-    
+    .form-search {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 600px)  {
 
     
-
-    .form-search {
-        display: block;
-    }
-
-    .form-search {
-        display: none;
-    }
-
     .nav-bar__ul {
         display: none;
     }
