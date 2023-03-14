@@ -557,6 +557,20 @@ position: relative;
     z-index: 2
 }
 
+.next-carrousel:hover, .prev-carrousel:hover {
+    transform: scale(1.1);
+    background-color: var(--letters-orange);
+    border: none;
+    transition: .2s!important;
+}
+
+.disabledBtnCarrousel:hover{
+    background-color: rgba(104, 103, 103, 0.83);
+    cursor: not-allowed!important;
+    transform: scale(1);
+}
+
+
 .next-carrousel {
    right: 0;
 }
