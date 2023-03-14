@@ -32,7 +32,7 @@ const validUser = (value) => {
 }
 
 const validName = (value) => {
-    let reGex = /^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/
+    let reGex = /^([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\']+[\s])+([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])+[\s]?([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])?$/
     let valid = reGex.test(value)
     
     return valid == true 
