@@ -623,11 +623,7 @@ const prevCarrousel = (e) => {
     controllerCarrousel.next -= 1
     isBtnDisabled()
 
-
-   
-
     let operation = controllerCarrousel.prev * -15
-
 
     if(mediaqueryList.matches){
         let operation = controllerCarrousel.prev * -10
