@@ -170,11 +170,18 @@
 	background-color:rgba(128, 128, 128, 0.472);
 	color: white;
 	font-weight: 900;
+	cursor: pointer;
+  }
+
+  .up:hover, .down:hover {
+	background-color: var(--letters-orange);
   }
   
   .down {
 	background-color:rgba(128, 128, 128, 0.472);
 	color: white;
 	font-weight: 900;
+	cursor: pointer;
+
   }
 

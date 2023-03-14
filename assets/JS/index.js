@@ -252,7 +252,9 @@ const searchProducts = (e) => {
                     totalCart()
                     $numberCart.innerText = contentCart.length
                     return
-            }}
+            }
+            return    
+        }
 
             contentCart = contentCart.map(item => {
                 return item[0].id == idProduct 
