@@ -1,9 +1,14 @@
 
-$big = document.querySelector('.carrousel-big')
-$points = document.querySelectorAll('.point')
+const $big = document.querySelector('.carrousel-big')
+const $points = document.querySelectorAll('.point')
 var mediaqueryList = window.matchMedia("(max-width: 768px)");
-$btnAddCarrousel = document.querySelector('.add-cart')
-$carrousel = document.querySelector('.carrousel-big')
+var minwidthTablet = window.matchMedia("(min-width: 769px)");
+
+const $btnAddCarrousel = document.querySelector('.add-cart')
+const $carrousel = document.querySelector('.carrousel-big')
+const $nextCarrousel =  document.querySelector('.next-carrousel')
+const $prevCarrousel = document.querySelector('.prev-carrousel')
+const $containerNextPrev = document.querySelector('.next-prev-carrousel')
 let arrayAllProducts = [
        
     {   name: 'Café Martinez Brasil',
@@ -461,37 +466,54 @@ let arrayAllProducts = [
 
 ]
 
-$points.forEach((item, index) => {
-    $points[0].classList.add('activePoint')
+const totalCarrousel = () => {
 
-    $points[index].addEventListener('click', () => {
-        let position = index
-        let operation = position * -15
-        console.log($points)
+    if(mediaqueryList.matches){
+        return 10
+    } else {
+        return 6
+    }
+}
 
-        if(mediaqueryList.matches){
-            let operation = position * -10
-            $big.style.transform = `translateX(${operation}%)`
-        }else{
-            $big.style.transform = `translateX(${operation}%)`
+const controllerCarrousel = {
+current: 1,
+next: 2,
+prev: 0,
+total: totalCarrousel(),
+}
 
-        }
+
+
+
+// $points.forEach((item, index) => {
+//     $points[0].classList.add('activePoint')
+
+//     $points[index].addEventListener('click', () => {
+//         let position = index
+//         let operation = position * -15
+
+
+
+//         if(mediaqueryList.matches){
+//             let operation = position * -10
+//             $big.style.transform = `translateX(${operation}%)`
+//         }else{
+//             $big.style.transform = `translateX(${operation}%)`
+
+//         }
         
-        $points.forEach((item, index )=>{
-            $points[index].classList.remove('activePoint')
-        })
+//         $points.forEach((item, index )=>{
+//             $points[index].classList.remove('activePoint')
+//         })
 
-            $points[index].classList.add('activePoint')
-    })
+//             $points[index].classList.add('activePoint')
+//     })
 
-});
+// });
 
 const addCart = (e) => {
     e.stopImmediatePropagation()
     let x = e.target.dataset.id
-    console.log('hola')
-
-
 
     if(e.target.classList.contains('add-cart')){
         console.log('hola')
@@ -531,9 +553,144 @@ const addCart = (e) => {
     }
 }
 
+const isBtnDisabled = () => {
+    if(controllerCarrousel.prev == 0){
+        $prevCarrousel.classList.add('disabledBtnCarrousel')
+    } else {
+        $prevCarrousel.classList.remove('disabledBtnCarrousel')
+    }
+
+    if(mediaqueryList.matches && controllerCarrousel.current == 10){
+        $nextCarrousel.classList.add('disabledBtnCarrousel')
+        return
+    } else if(mediaqueryList.matches){
+        $nextCarrousel.classList.remove('disabledBtnCarrousel')
+
+    }
+    
+    if(minwidthTablet.matches && controllerCarrousel.current == 6){
+        $nextCarrousel.classList.add('disabledBtnCarrousel')
+        return
+    } else if(minwidthTablet.matches) {
+        $nextCarrousel.classList.remove('disabledBtnCarrousel')
+    }
+
+    
+}
+
+const nextCarrousel = (e) => {
+    e.stopImmediatePropagation()
+    isBtnDisabled()
+    if(mediaqueryList.matches && controllerCarrousel.current == 10){
+        return
+    }
+    if(minwidthTablet.matches && controllerCarrousel.current == 6){
+        return
+    }
+    controllerCarrousel.current += 1
+    controllerCarrousel.prev += 1
+    controllerCarrousel.next += 1
+    isBtnDisabled()
+    
+
+    let operation = controllerCarrousel.prev * -15
+
+
+    if(mediaqueryList.matches){
+        let operation = controllerCarrousel.prev * -10
+        $big.style.transform = `translateX(${operation}%)`
+    }else{
+        $big.style.transform = `translateX(${operation}%)`
+    }
+
+    $points.forEach((item, index )=>{
+        $points[controllerCarrousel.prev - 1].classList.remove('activePoint')
+    })
+
+        $points[controllerCarrousel.prev].classList.add('activePoint')
+}
+
+const prevCarrousel = (e) => {
+    e.stopImmediatePropagation()
+    isBtnDisabled()
+
+    if(controllerCarrousel.prev == 0){
+        return
+    }
+
+    controllerCarrousel.current -= 1
+    controllerCarrousel.prev -= 1
+    controllerCarrousel.next -= 1
+    isBtnDisabled()
+
+
+   
+
+    let operation = controllerCarrousel.prev * -15
+
+
+    if(mediaqueryList.matches){
+        let operation = controllerCarrousel.prev * -10
+        $big.style.transform = `translateX(${operation}%)`
+    }else{
+        $big.style.transform = `translateX(${operation}%)`
+    }
+
+    $points.forEach((item, index )=>{
+        $points[controllerCarrousel.prev + 1].classList.remove('activePoint')
+    })
+
+        $points[controllerCarrousel.prev].classList.add('activePoint')
+}
+
 
 const initCarrousel = () => {
-$carrousel.addEventListener('click', addCart)
+    isBtnDisabled()
+    $carrousel.addEventListener('click', addCart)
+    $nextCarrousel.addEventListener('click', nextCarrousel)
+    $prevCarrousel.addEventListener('click', prevCarrousel)
+    window.addEventListener('resize', () => {
+        
+        if(mediaqueryList.matches){
+            window.addEventListener('resize', () => {
+                if(minwidthTablet.matches){
+                    
+                        controllerCarrousel.current = 1
+                        controllerCarrousel.next = 2
+                        controllerCarrousel.prev = 0
+                        controllerCarrousel.total = totalCarrousel()
+                        
+                        isBtnDisabled()
+                        $big.style.transform = `translateX(0%)`
+                        $points.forEach((item, index) =>{
+                            index == 0
+                            ? item.classList.add('activePoint')
+                            : item.classList.remove('activePoint')
+                        return
+                        })
+                    }
+                })
+        } 
+        if(minwidthTablet.matches){
+            window.addEventListener('resize', () => {
+                if(mediaqueryList.matches){
+                        controllerCarrousel.current = 1
+                        controllerCarrousel.next = 2
+                        controllerCarrousel.prev = 0
+                        controllerCarrousel.total = totalCarrousel()
+                        isBtnDisabled()
+                        $big.style.transform = `translateX(0%)`
+                        $points.forEach((item, index) =>{
+                            index == 0
+                            ? item.classList.add('activePoint')
+                            : item.classList.remove('activePoint')
+                        return
+                        })                    
+                }
+            })
+        }
+
+    })
 }
 
 initCarrousel()

@@ -18,6 +18,8 @@
 	animation: fade .33s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+/*  */
+
 @keyframes fade {
 0% {
 	height: 0;
