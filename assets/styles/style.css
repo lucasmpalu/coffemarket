@@ -170,6 +170,7 @@ margin: 0;
     height: 2.1rem;
     width: 19rem!important;
     position: relative;
+    right: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
