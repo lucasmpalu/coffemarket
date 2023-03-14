@@ -220,7 +220,7 @@ const checkPassword = (value) => {
         return false
     }
     if(!validPassword(valueInput)){
-        showError($password, 'Debe contener por lo menos 8 digitos, un caracter especial, una mayuscula y un número')
+        showError($password, 'Debe contener por lo menos 8 digitos, un caracter especial, una minuscula, una mayuscula y un número')
         return false
     }
 
