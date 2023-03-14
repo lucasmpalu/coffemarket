@@ -625,8 +625,8 @@ const renderGeneral = (e) => {
     let selectedSubcategory = e.target.dataset.subcategory
     let selectedCategory = e.target.dataset.category
     isBtnDisabled()
-
     if(selectedCategory != undefined){
+        $containerButtonPages.classList.remove('displayNone')
 
         switch (selectedCategory) {
             case 'Cafe':
@@ -656,6 +656,8 @@ const renderGeneral = (e) => {
             default:
                 clearProducts()
                 $cardsContainer.innerHTML = `No encontramos ningun resultado para tu busqueda 🙁`
+                $containerButtonPages.classList.add('displayNone')
+                
                 break;
         }
 
@@ -861,6 +863,7 @@ const renderAll = (e) => {
     let selectedCategory = e.target.dataset.category
 
     if(selectedCategory == 'Todos'){
+        $containerButtonPages.classList.remove('displayNone')
         clearProducts()
         currentCategory = selectedCategory
         renderCategory(selectedCategory)
