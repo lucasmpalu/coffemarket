@@ -100,10 +100,10 @@ button:hover {
 
 }
 
-.label-cart:hover, .label-search:hover {
+.label-cart:hover {
     cursor: pointer;
     transform: translateY(-6px);
-    transition: 1.1s;
+    transition: .5s;
 }
 
 .label-login:hover{
@@ -112,6 +112,7 @@ button:hover {
 
 .label-login:hover img {
     background-color: var(--letters-orange);
+    transition: all .25s;
 }
 
 .whatsapp-sticky:hover {
